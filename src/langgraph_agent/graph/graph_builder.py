@@ -2,12 +2,14 @@ from langgraph.graph import StateGraph, START, END
 from src.langgraph_agent.state.state import State
 from dotenv import load_dotenv
 from src.langgraph_agent.tools.Image_analysis_agent.image_analysis_agent import ImageAnalysisAgent
+from src.langgraph_agent.tools.rag_agent.rag_analysis import RAGAnalysisAgent
 
 class GraphBuilder:
     def __init__(self, model):
         self.llm = model
         self.graph = StateGraph(State)
         self.image_agent = ImageAnalysisAgent()
+        self.rag_agent = RAGAnalysisAgent()  # Add RAG agent
     
     def orchestrator_node(self, state):
         """Uses LLM to intelligently classify the question and route accordingly"""
@@ -18,7 +20,6 @@ class GraphBuilder:
         # Get the latest user message
         latest_message = messages[-1]
         
-        # Fix: Access content attribute directly, not with .get()
         if hasattr(latest_message, 'content'):
             user_question = latest_message.content
         elif isinstance(latest_message, dict):
@@ -53,29 +54,84 @@ class GraphBuilder:
             
             if classification in valid_categories:
                 print(f"🤖 LLM classified question as: {classification}")
-                return {"next": classification, "reason": f"LLM classified as {classification}"}
+                
+                # Return only the routing info, no process flow
+                return {
+                    "next": classification, 
+                    "reason": f"LLM classified as {classification}"
+                }
             else:
                 print(f"⚠️ LLM returned invalid classification: {classification}, defaulting to general_response")
-                return {"next": "general_response", "reason": "Invalid LLM classification, defaulting to general"}
+                return {
+                    "next": "general_response", 
+                    "reason": "Invalid LLM classification, defaulting to general"
+                }
                 
         except Exception as e:
             print(f"❌ Error in LLM classification: {str(e)}, defaulting to general_response")
-            return {"next": "general_response", "reason": f"LLM classification error: {str(e)}"}
+            return {
+                "next": "general_response", 
+                "reason": f"LLM classification error: {str(e)}"
+            }
 
     def terms_conditions_node(self, state):
-        """Handles terms and conditions questions"""
+        """Handles terms and conditions questions using RAG"""
+        messages = state.get("messages", [])
+        if not messages:
+            return {
+                "current_result": {
+                    "status": "error",
+                    "response": "No messages found",
+                    "message": "No user question to process"
+                }
+            }
+        
+        # Get the latest user message
+        latest_message = messages[-1]
+        if hasattr(latest_message, 'content'):
+            user_question = latest_message.content
+        elif isinstance(latest_message, dict):
+            user_question = latest_message.get("content", "")
+        else:
+            user_question = str(latest_message)
+        
+        # Process with RAG
+        rag_result = self.rag_agent.process_query(user_question)
+        
+        # Return ONLY the essential data, no process flow
         return {
-            "status": "success",
-            "response": "Here are the terms and conditions for our service...",
-            "message": "Terms and conditions provided"
+            "current_result": {
+                "status": rag_result["status"],
+                "response": rag_result["response"],
+                "message": rag_result["message"],
+                "query": user_question,
+                "agent_type": "RAG Terms & Conditions Agent",
+                "search_details": rag_result.get("search_details", []),
+                "documents_found": rag_result.get("documents_found", 0)
+                # Removed process_flow - no more hardcoded steps
+            }
         }
     
     def recommendation_agent_node(self, state):
         """Handles complaints and provides recommendations"""
         return {
-            "status": "success",
-            "response": "I understand your concern. Here are some recommendations...",
-            "message": "Recommendations provided for complaint"
+            "current_result": {
+                "status": "success",
+                "response": "I understand your concern. Here are some recommendations...",
+                "message": "Recommendations provided for complaint",
+                "process_flow": [
+                    "💡 **Recommendation Agent Activated**",
+                    "📝 **Analyzing user concern**",
+                    "🔍 **Step 1: Issue Classification**",
+                    "   - Identifying problem type and severity",
+                    "   - Mapping to solution categories",
+                    " **Step 2: Solution Generation**",
+                    "   - Applying recommendation algorithms",
+                    "   - Prioritizing solutions by effectiveness",
+                    "✅ **Step 3: Recommendations Ready**"
+                ],
+                "agent_type": "Recommendation Agent"
+            }
         }
     
     def general_response_node(self, state):

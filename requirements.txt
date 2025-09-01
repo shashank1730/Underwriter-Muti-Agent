@@ -17,3 +17,6 @@ sentence-transformers
 einops
 pi-heif
 pymupdf
+docling
+rapidocr 
+onnxruntime
