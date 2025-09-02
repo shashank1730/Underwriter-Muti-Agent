@@ -2,8 +2,8 @@ from langchain_text_splitters import MarkdownHeaderTextSplitter
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import Chroma
 
-
-
+# List of markdown files (add more as needed)
+files = ["document.md"]  # later you can add more files here
 
 # Define markdown headers we care about
 headers = [
@@ -16,50 +16,46 @@ headers = [
 
 splitter = MarkdownHeaderTextSplitter(headers_to_split_on=headers)
 
-with open("document.md", "r", encoding="utf-8") as f:
-    markdown_text = f.read()
+all_docs = []
 
-docs = splitter.split_text(markdown_text)
-
-# Inspect each chunk with metadata
-for i, doc in enumerate(docs):
-    print(f"--- Chunk {i+1} ---")
-    print("Metadata:", doc.metadata)
-
-
-
-# Assuming `docs` is the list of Document objects from MarkdownHeaderTextSplitter
-for doc in docs:
-    # Collect all heading metadata in order
-    heading_keys = ["heading1", "heading2", "heading3", "heading4", "heading5"]
-    context_path = []
-    for key in heading_keys:
-        if key in doc.metadata and doc.metadata[key]:
-            # Remove bold if present
-            title = doc.metadata[key]
-            if title.startswith("**") and title.endswith("**"):
-                title = title[2:-2].strip()
-            context_path.append(title)
+# Process each file
+for file in files:
+    with open(file, "r", encoding="utf-8") as f:
+        markdown_text = f.read()
     
-    # Add a new metadata field with the full context path
-    doc.metadata["context_path"] = " > ".join(context_path)
+    docs = splitter.split_text(markdown_text)
 
-# Check the first few chunks
-for i, doc in enumerate(docs[:5]):  # first 5 chunks
+    # Enrich metadata with context path
+    for doc in docs:
+        heading_keys = ["heading1", "heading2", "heading3", "heading4", "heading5"]
+        context_path = []
+        for key in heading_keys:
+            if key in doc.metadata and doc.metadata[key]:
+                title = doc.metadata[key]
+                if title.startswith("**") and title.endswith("**"):
+                    title = title[2:-2].strip()
+                context_path.append(title)
+        doc.metadata["context_path"] = " > ".join(context_path)
+        doc.metadata["source_file"] = file  # 🔑 keep track of which file this chunk came from
+    
+    all_docs.extend(docs)  # add this file's docs to global list
+
+# Inspect first few chunks from all files
+for i, doc in enumerate(all_docs[:5]):
     print(f"--- Chunk {i+1} ---")
+    print("Source file:", doc.metadata.get("source_file"))
     print("Context path:", doc.metadata.get("context_path", "No context"))
-    print("Content preview:", doc.page_content[:20], "...\n")  # first 200 chars
+    print("Content preview:", doc.page_content[:100], "...\n")
 
-
-# Load a HuggingFace sentence-transformer model
+# Load embeddings
 embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
-
+# Save to Chroma
 db = Chroma.from_documents(
-    documents=docs,
+    documents=all_docs,
     embedding=embeddings,
     collection_name="policy_docs_hf",
-    persist_directory="./chroma_db"   # path to save the DB
+    persist_directory="./chroma_db"   # path to save DB
 )
 
-db.persist() 
+db.persist()

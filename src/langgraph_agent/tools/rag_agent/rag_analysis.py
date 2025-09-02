@@ -38,10 +38,11 @@ class RAGAnalysisAgent:
     def setup_chain(self):
         """Setup the RAG chain"""
         template = """
-        You are a terms and conditions expert. 
-        Use the provided context to answer the user question. 
-        Only use the context given. 
-        If the answer is not in the context, respond with "Out of scope".
+        - You are employed at the company that provides home insurance.
+        - The queries are related to clarification on policies.
+        - Answers should be informative.
+        - Do not answer questions that cannot be supported by a context.
+
 
         Context:
         {context}
@@ -49,7 +50,6 @@ class RAGAnalysisAgent:
         Question:
         {input}
 
-        Answer strictly based on the context.
         """
         
         chat_prompt = ChatPromptTemplate.from_template(template)

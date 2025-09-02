@@ -7,6 +7,10 @@ from src.langgraph_agent.state.state import State
 from langchain_core.messages import HumanMessage, AIMessage
 import time
 import random
+import asyncio
+import threading
+import re
+import json
 
 # Add some randomness to make it feel more natural
 def get_thinking_message(step):
@@ -34,10 +38,137 @@ def get_thinking_message(step):
     }
     return random.choice(messages.get(step, ["Processing..."]))
 
+async def show_progress_animation(status_placeholder, progress_placeholder, next_agent, stop_event):
+    """Show progress animation without blocking main execution"""
+    loop_count = 0
+    while not stop_event.is_set():
+        loop_count += 1
+        
+        if next_agent == "image_analysis":
+            # Continuous loop for image analysis
+            status_placeholder.text("🔍 Activating High Value Assessment Agent...")
+            progress_placeholder.progress(60)
+            await asyncio.sleep(1.5)
+            
+            if stop_event.is_set():
+                break
+                
+            status_placeholder.text("🌐 Searching Zillow for property...")
+            progress_placeholder.progress(70)
+            await asyncio.sleep(1.5)
+            
+            if stop_event.is_set():
+                break
+                
+            status_placeholder.text("🖼️ Analyzing property images...")
+            progress_placeholder.progress(80)
+            await asyncio.sleep(1.5)
+            
+            if stop_event.is_set():
+                break
+                
+            status_placeholder.text("🔄 Processing continues...")
+            progress_placeholder.progress(75)
+            await asyncio.sleep(1.0)
+            
+        elif next_agent == "terms_conditions":
+            # Continuous loop for RAG agent
+            status_placeholder.text("🔍 Activating Q&A UnderWriter Agent...")
+            progress_placeholder.progress(60)
+            await asyncio.sleep(1.5)
+            
+            if stop_event.is_set():
+                break
+                
+            status_placeholder.text("🔎 Searching policy documents...")
+            progress_placeholder.progress(70)
+            await asyncio.sleep(1.5)
+            
+            if stop_event.is_set():
+                break
+                
+            status_placeholder.text(" Processing with AI model...")
+            progress_placeholder.progress(80)
+            await asyncio.sleep(1.5)
+            
+            if stop_event.is_set():
+                break
+                
+            status_placeholder.text("🔄 Processing continues...")
+            progress_placeholder.progress(75)
+            await asyncio.sleep(1.0)
+            
+        elif next_agent == "recommendation_agent":
+            # Continuous loop for recommendation agent
+            status_placeholder.text("💡 Activating UnderWriter Recommendation Agent...")
+            progress_placeholder.progress(60)
+            await asyncio.sleep(1.5)
+            
+            if stop_event.is_set():
+                break
+                
+            status_placeholder.text("🔍 Analyzing your concern...")
+            progress_placeholder.progress(60)
+            await asyncio.sleep(1.5)
+            
+            if stop_event.is_set():
+                break
+                
+            status_placeholder.text("💭 Generating recommendations...")
+            progress_placeholder.progress(80)
+            await asyncio.sleep(1.5)
+            
+            if stop_event.is_set():
+                break
+                
+            status_placeholder.text("🔄 Processing continues...")
+            progress_placeholder.progress(75)
+            await asyncio.sleep(1.0)
+            
+        else:  # general_response
+            # Continuous loop for general response
+            status_placeholder.text(" Activating General Response Agent...")
+            progress_placeholder.progress(60)
+            await asyncio.sleep(1.5)
+            
+            if stop_event.is_set():
+                break
+                
+            status_placeholder.text("💭 Processing your question...")
+            progress_placeholder.progress(70)
+            await asyncio.sleep(1.5)
+            
+            if stop_event.is_set():
+                break
+                
+            status_placeholder.text("✨ Generating response...")
+            progress_placeholder.progress(80)
+            await asyncio.sleep(1.5)
+            
+            if stop_event.is_set():
+                break
+                
+            status_placeholder.text("🔄 Processing continues...")
+            progress_placeholder.progress(75)
+            await asyncio.sleep(1.0)
+        
+        # Check if we should break the loop
+        if loop_count >= 10:  # Show more loops for better effect
+            break
+
+def run_async_animation(status_placeholder, progress_placeholder, next_agent, stop_event):
+    """Run async animation in a separate thread"""
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    try:
+        loop.run_until_complete(show_progress_animation(status_placeholder, progress_placeholder, next_agent, stop_event))
+    finally:
+        loop.close()
+
 def load_langgraph_agenticai_app():
     """Loads and run the LanGraph AgenticAI application with streamlitUI."""
     
-    st.title("🤖 Insurance Agent Assistant")
+    st.title("🤖 Insurance Underwriter AI Agents")
     
     # Initialize session state
     if "messages" not in st.session_state:
@@ -45,6 +176,23 @@ def load_langgraph_agenticai_app():
     
     if "display" not in st.session_state:
         st.session_state.display = DisplayResultStreamlit()
+    
+    # Show welcome suggestion box in sidebar instead of main chat
+    with st.sidebar:
+        st.markdown("## 🤖 Suggetion BOX")
+        st.markdown("---")
+
+        with st.expander("💡 Click to see examples", expanded=True):
+            st.markdown("**🔍 High Value Assessment:** Does Image analysis & risk scoring (drop address)")
+            st.markdown("**📚 Q&A UnderWriter:** Will Answer Policy related questions")
+            st.markdown("**💡 UnderWriter Recommendation:** Help in Drafting client emails from previous cases")
+            
+            st.markdown("---")
+            st.markdown("**💬 Example Questions:**")
+            st.markdown("**Property:** `46 Creekstone Ln, Dawsonville, GA 30534`")
+            st.markdown("**Terms:** `Does insurance cover war damage?`")
+            st.markdown("**Recommendation:** `My kitchen caught fire, need help`")
+
     
     # Display chat history
     for message in st.session_state.messages:
@@ -84,7 +232,6 @@ def load_langgraph_agenticai_app():
             status_placeholder = st.empty()
             
             # Step 1: Question Analysis
-            thinking_placeholder.markdown("🤖 **Agent is thinking...**")
             status_placeholder.text("🔍 Analyzing your question...")
             progress_placeholder.progress(20)
             time.sleep(0.8)
@@ -95,8 +242,11 @@ def load_langgraph_agenticai_app():
             time.sleep(0.8)
             
             # Step 3: Determine which agent will be used
-            # We need to run the orchestrator first to know which agent to activate
+            # We need to run the orchestrator first to know which agent it chooses
             orchestrator_result = None
+            stop_event = threading.Event()
+            animation_thread = None
+            
             try:
                 # Create a temporary state for orchestrator
                 temp_state = State(
@@ -109,76 +259,50 @@ def load_langgraph_agenticai_app():
                 orchestrator_result = graphBuilder.orchestrator_node(temp_state)
                 next_agent = orchestrator_result.get("next", "unknown")
                 
-                # Show the specific agent being activated
-                if next_agent == "image_analysis":
-                    status_placeholder.text("🔍 Activating Image Analysis Agent...")
-                    progress_placeholder.progress(60)
-                    time.sleep(0.8)
-                    
-                    status_placeholder.text("🌐 Searching Zillow for property...")
-                    progress_placeholder.progress(80)
-                    time.sleep(1.2)
-                    
-                    status_placeholder.text("🖼️ Analyzing property images...")
-                    progress_placeholder.progress(90)
-                    time.sleep(1.0)
-                    
-                elif next_agent == "terms_conditions":
-                    status_placeholder.text("🔍 Activating RAG Agent...")
-                    progress_placeholder.progress(60)
-                    time.sleep(0.8)
-                    
-                    status_placeholder.text("🔎 Searching policy documents...")
-                    progress_placeholder.progress(80)
-                    time.sleep(1.2)
-                    
-                    status_placeholder.text("🧠 Processing with AI model...")
-                    progress_placeholder.progress(90)
-                    time.sleep(1.0)
-                    
-                elif next_agent == "recommendation_agent":
-                    status_placeholder.text("💡 Activating Recommendation Agent...")
-                    progress_placeholder.progress(60)
-                    time.sleep(0.8)
-                    
-                    status_placeholder.text("🔍 Analyzing your concern...")
-                    progress_placeholder.progress(80)
-                    time.sleep(1.2)
-                    
-                    status_placeholder.text("💭 Generating recommendations...")
-                    progress_placeholder.progress(90)
-                    time.sleep(1.0)
-                    
-                else:  # general_response
-                    status_placeholder.text("🤖 Activating General Response Agent...")
-                    progress_placeholder.progress(60)
-                    time.sleep(0.8)
-                    
-                    status_placeholder.text("💭 Processing your question...")
-                    progress_placeholder.progress(80)
-                    time.sleep(1.2)
-                    
-                    status_placeholder.text("✨ Generating response...")
-                    progress_placeholder.progress(90)
-                    time.sleep(1.0)
+                # Update the thinking placeholder with the routing info
+                agent_names = {
+                    "image_analysis": "High Value Assessment",
+                    "terms_conditions": "Q&A UnderWriter", 
+                    "recommendation_agent": "UnderWriter Recommendation",
+                    "general_response": "General Response"
+                }
                 
-                # Step 4: Complete
+                agent_display_name = agent_names.get(next_agent, next_agent.replace('_', ' ').title())
+                thinking_placeholder.markdown(f"🤖 **Transaction routed to {agent_display_name} Agent**")
+                
+                # Start progress animation in background thread
+                animation_thread = threading.Thread(
+                    target=run_async_animation,
+                    args=(status_placeholder, progress_placeholder, next_agent, stop_event)
+                )
+                animation_thread.start()
+                
+                # Let animation run for a moment to show it's working
+                time.sleep(2)
+                
+                # Final step before running graph
                 status_placeholder.text("✅ Generating response...")
-                progress_placeholder.progress(100)
-                time.sleep(0.5)
+                progress_placeholder.progress(80)
+                time.sleep(1.0)
                 
             except Exception as e:
                 # Fallback to generic thinking if orchestrator fails
                 status_placeholder.text("🤖 Processing your request...")
-                progress_placeholder.progress(90)
+                progress_placeholder.progress(80)
                 time.sleep(1.0)
                 
                 status_placeholder.text("✅ Generating response...")
-                progress_placeholder.progress(100)
+                progress_placeholder.progress(80)
                 time.sleep(0.5)
             
-            # Run the actual graph
+            # Run the actual graph (this happens while animation is running)
             result = graph.invoke(initial_state)
+            
+            # Stop the progress animation
+            if stop_event:
+                stop_event.set()
+                if animation_thread:
+                    animation_thread.join(timeout=1)
             
             # Clear ALL placeholders - this will remove the thinking messages completely
             thinking_placeholder.empty()
@@ -205,14 +329,66 @@ def load_langgraph_agenticai_app():
                 if "image_analysis" in final_result:
                     response = f"✅ Property Analysis Complete!\n\n"
                     response += f"**Property ID:** {final_result.get('zpid', 'N/A')}\n\n"
-                    response += f"**Image Analysis:**\n"
-                    for key, value in final_result.get("image_analysis", {}).items():
-                        response += f"- {key}: {value}\n"
-                    response += f"\n**Risk Analysis:**\n"
+                    
+                    # Person's Report Section (NOW AT TOP)
+                    if "person_report" in final_result:
+                        response += f"**📋 Exclusive Insurance Agent Property Assessment:**\n"
+                        person_data = final_result["person_report"].get("Exclusive Insurance Agent Property Assessment", {})
+                        for field, value in person_data.items():
+                            response += f"- **{field}:** **{value}**\n"
+                    
+                    response += f"\n"  # Add spacing
+                    
+                    # Image Analysis Section
+                    response += f"**🔍 AI Image Analysis from Zillow :**\n"
+                    image_analysis = final_result.get("image_analysis", {})
+                    for key, value in image_analysis.items():
+                        response += f"- **{key}:** {value}\n"
+                    
+                    # Risk Analysis Section
+                    response += f"\n**⚠️ Risk Analysis:**\n"
                     if "risk_analysis" in final_result:
                         risk = final_result["risk_analysis"]
-                        response += f"- Risk Score: {risk.get('Risk Score', 'N/A')}/100\n"
-                        response += f"- Risk Factors: {', '.join(risk.get('Risk Factors', []))}\n"
+                        response += f"- **Risk Score:** {risk.get('Risk Score', 'N/A')}/5\n"
+                        
+                        # Show Risk Factors
+                        risk_factors = risk.get("Risk Factors", [])
+                        if risk_factors:
+                            response += f"- **Risk Factors:** "
+                            for factor in risk_factors:
+                                response += f"• {factor} "
+                            response += f"\n"
+                        else:
+                            response += f"- **Risk Factors:** None identified\n"
+                        
+                        # Show Risk Reasoning
+                        risk_reasoning = risk.get("Risk Reasoning", {})
+                        if risk_reasoning:
+                            response += f"\n**📝 Risk Reasoning:**\n"
+                            for factor, reason in risk_reasoning.items():
+                                response += f"- **{factor}:** {reason}\n"
+                        
+                        # Show Overall Assessment
+                        overall_assessment = risk.get("Overall Risk Assessment", "")
+                        if overall_assessment:
+                            response += f"\n**📝 Overall Assessment:**\n{overall_assessment}\n"
+                    
+                    # Comparison Report Section
+                    if "comparison_report" in final_result:
+                        response += f"\n**📋 Comparison Report:**\n"
+                        response += f"*What Person Provided vs What AI Detected*\n\n"
+                        
+                        comparison = final_result["comparison_report"].get("comparison", {})
+                        for field, data in comparison.items():
+                            actual = data.get("actual", "N/A")
+                            predicted = data.get("predicted", "N/A")
+                            match_icon = "✅" if str(actual).lower() == str(predicted).lower() else "❌"
+                            response += f"{match_icon} **{field}:**\n"
+                            response += f"  - Person: {actual}\n"
+                            response += f"  - AI: {predicted}\n\n"
+                    
+
+                    
                 else:
                     # Handle RAG and other responses - ONLY show the actual answer
                     response = final_result.get("response", "Analysis completed successfully!")
@@ -224,7 +400,7 @@ def load_langgraph_agenticai_app():
                         
                         # Show all chunks that were used (not just the first one)
                         for chunk in final_result["search_details"][:3]:  # Show top 3 chunks
-                            response += f"**Chunk {chunk['rank']}:**\n"
+                            response += f"**Citation {chunk['rank']}:**\n"
                             response += f"```\n{chunk['content_preview']}\n```\n\n"
                         
                         response += f"**Total Documents Used:** {final_result.get('documents_found', 0)} policy sections"
@@ -251,12 +427,25 @@ def load_langgraph_agenticai_app():
                 st.success(f"✅ Results saved to property_{zpid}_complete_analysis.json")
             
         except Exception as e:
-            # Clear thinking container on error
-            if 'thinking_container' in locals():
-                thinking_container.empty()
+            # Clear thinking placeholders on error
+            if 'thinking_placeholder' in locals():
+                thinking_placeholder.empty()
+            if 'progress_placeholder' in locals():
+                progress_placeholder.empty()
+            if 'status_placeholder' in locals():
+                status_placeholder.empty()
+            
+            # Stop progress flow if it's running
+            if 'stop_event' in locals() and stop_event:
+                stop_event.set()
+            
             error_msg = f"❌ Error: {str(e)}"
             st.chat_message("assistant").write(error_msg)
             st.session_state.messages.append({"role": "assistant", "content": error_msg})
             st.error(f"Graph execution failed: {str(e)}")
+
+# Main execution
+if __name__ == "__main__":
+    load_langgraph_agenticai_app()
 
 

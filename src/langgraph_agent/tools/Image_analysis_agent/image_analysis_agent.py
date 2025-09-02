@@ -96,24 +96,33 @@ class ImageAnalysisAgent:
             return None
 
     def _calculate_risk_score(self, image_analysis_json: Dict[str, Any]) -> Dict[str, Any]:
-        """Calculate risk score based on image analysis"""
+        """Calculate risk score based on image analysis with detailed reasoning"""
         risk_score_prompt = f"""
         You are an expert insurance underwriter AI. 
-        Given the following property details in JSON format, calculate a numeric Risk Score between 0 and 100.
-        Higher = riskier property. Lower = safer property.
+        Given the following property details in JSON format, calculate a numeric Risk Score between 0 and 5.
+        Higher or 5 = riskier property. Lower or 0 = safer property.
 
         Rules to follow:
         - Use ONLY the key and its associated value when evaluating risk. Do not assume meaning from the key alone.
         - Consider Roof, Exterior, Pool, Garage, Stories, Condition, Lot Size, Driveway, and Solar Panels.
         - Mention in Risk factors only that if value associated with the key is from the property details and spikes the score heavily.
         - make sure to combine key and value in the output
+        - Provide detailed reasoning for each risk factor
+        - Risk Score must be a plain number between 0 and 5. Do not include any extra text, symbols, or percentages.
+        - Do NOT add %, do NOT write /100, do NOT include text
 
         IMPORTANT: Respond with ONLY valid JSON, no markdown formatting, no extra text.
 
         Schema (follow exactly):
         {{
-        "Risk Score": <number between 0 and 100>,
-        "Risk Factors": [ "Pool", "Asphalt Roof", "Excellent Condition", ... ]
+        "Risk Score": a numeric value between 0 and 5, ONLY the number, do NOT add %, do NOT write /100, do NOT include text
+        "Risk Factors": [ "Pool: No", "Asphalt Roof: New", "Excellent Condition: Modern", ... ],
+        "Risk Reasoning": {{
+            "Pool: No": "No pool reduces liability risk",
+            "Asphalt Roof: New": "New roof reduces maintenance risk",
+            "Excellent Condition: Modern": "Modern condition reduces overall risk profile"
+        }},
+        "Overall Risk Assessment": "Short and Concise explanation of why this score was given"
         }}
 
         Given property details:
@@ -142,16 +151,47 @@ class ImageAnalysisAgent:
                 # If still fails, return default values
                 print("⚠️ Using default risk values due to JSON parsing failure")
                 return {
-                    "Risk Score": 50,
-                    "Risk Factors": ["Unable to analyze - using default score"]
+                    "Risk Score": 0,
+                    "Risk Factors": ["Unable to analyze - using default score"],
+                    "Risk Reasoning": {},
+                    "Overall Risk Assessment": "Default assessment due to parsing error"
                 }
                 
         except Exception as e:
             print(f"❌ Error in risk score calculation: {str(e)}")
             return {
-                "Risk Score": 50,
-                "Risk Factors": ["Error in analysis"]
+                "Risk Score": 0,
+                "Risk Factors": ["Error in analysis"],
+                "Risk Reasoning": {},
+                "Overall Risk Assessment": "Error occurred during analysis"
             }
+
+    def _create_person_report(self) -> Dict[str, Any]:
+        """Create a simple report showing what the person provided"""
+        # Create person's provided values (you can replace these with real data)
+        person_report = {
+            "Exclusive Insurance Agent Property Assessment": {
+                "Roof Type": "Asphalt Shingle",
+                "Exterior Material": "Stone Veneer and Siding",
+                "Pool": "No",
+                "Garage": "2-car",
+                "Number of Stories": "2",
+                "General Condition / Renovation Indicators": "Excellent / Modern",
+                "Lot Size / Backyard Area": "Medium",
+                "Driveway Type / Paved Area": "Concrete",
+                "Solar Panels / External Installations": "None"
+            }
+        }
+        
+        return person_report
+
+    def _save_comparison_report(self, zpid: str, comparison_report: Dict[str, Any]) -> str:
+        """Save comparison report to JSON file"""
+        filename = f"property_{zpid}_comparison_report.json"
+        with open(filename, "w") as f:
+            json.dump(comparison_report, f, indent=4)
+        print(f"✅ Comparison report saved to {filename}")
+        return filename
 
     def process(self, state: State) -> State:
         """
@@ -217,17 +257,25 @@ class ImageAnalysisAgent:
                 }
                 return state
             
-            # Step 3: Calculate risk score
-            print("📊 Calculating risk score...")
+            # Step 3: Calculate risk score with reasoning
+            print("📊 Calculating risk score with reasoning...")
             risk_score_result = self._calculate_risk_score(image_analysis_result)
             
-            # Step 4: Save results
+            # Step 4: Create person's report
+            print("📋 Creating person's report...")
+            person_report = self._create_person_report()
+            
+            # Step 5: Save results
             if zpid:
                 with open(f"property_{zpid}_image_analysis.json", "w") as f:
                     json.dump(image_analysis_result, f, indent=4)
                 
                 with open(f"property_{zpid}_risk_analysis.json", "w") as f:
                     json.dump(risk_score_result, f, indent=4)
+                
+                # Save person's report
+                with open(f"property_{zpid}_person_report.json", "w") as f:
+                    json.dump(person_report, f, indent=4)
                 
                 print(f"✅ Results saved for ZPID: {zpid}")
             
@@ -238,6 +286,7 @@ class ImageAnalysisAgent:
                 "property_data": property_data,
                 "image_analysis": image_analysis_result,
                 "risk_analysis": risk_score_result,
+                "person_report": person_report,  # Add person's report to state
                 "message": f"Successfully analyzed property {zpid}"
             }
             

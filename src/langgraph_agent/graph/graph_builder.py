@@ -3,6 +3,7 @@ from src.langgraph_agent.state.state import State
 from dotenv import load_dotenv
 from src.langgraph_agent.tools.Image_analysis_agent.image_analysis_agent import ImageAnalysisAgent
 from src.langgraph_agent.tools.rag_agent.rag_analysis import RAGAnalysisAgent
+from src.langgraph_agent.tools.recommendation_agent.recommend import RecommendationAgent
 
 class GraphBuilder:
     def __init__(self, model):
@@ -10,6 +11,7 @@ class GraphBuilder:
         self.graph = StateGraph(State)
         self.image_agent = ImageAnalysisAgent()
         self.rag_agent = RAGAnalysisAgent()  # Add RAG agent
+        self.recommendation_agent = RecommendationAgent()  # Add Recommendation agent
     
     def orchestrator_node(self, state):
         """Uses LLM to intelligently classify the question and route accordingly"""
@@ -105,7 +107,7 @@ class GraphBuilder:
                 "response": rag_result["response"],
                 "message": rag_result["message"],
                 "query": user_question,
-                "agent_type": "RAG Terms & Conditions Agent",
+                "agent_type": "Q&A UnderWrite",
                 "search_details": rag_result.get("search_details", []),
                 "documents_found": rag_result.get("documents_found", 0)
                 # Removed process_flow - no more hardcoded steps
@@ -114,32 +116,32 @@ class GraphBuilder:
     
     def recommendation_agent_node(self, state):
         """Handles complaints and provides recommendations"""
+        return self.recommendation_agent.process(state)
+    
+    def general_response_node(self, state):
+        """Handles general questions that don't fit other categories"""
         return {
             "current_result": {
                 "status": "success",
-                "response": "I understand your concern. Here are some recommendations...",
-                "message": "Recommendations provided for complaint",
-                "process_flow": [
-                    "💡 **Recommendation Agent Activated**",
-                    "📝 **Analyzing user concern**",
-                    "🔍 **Step 1: Issue Classification**",
-                    "   - Identifying problem type and severity",
-                    "   - Mapping to solution categories",
-                    " **Step 2: Solution Generation**",
-                    "   - Applying recommendation algorithms",
-                    "   - Prioritizing solutions by effectiveness",
-                    "✅ **Step 3: Recommendations Ready**"
-                ],
-                "agent_type": "Recommendation Agent"
+                "response": """ **YOUR QUESTION IS OUT OF SCOPE**
+
+I cannot answer this type of question. I am specialized for insurance underwriting only.
+
+**Available Agents:**
+
+🔍 High Value Assessment: Does Image analysis & risk scoring (drop address)  
+📚 Q&A UnderWriter: Will Answer Policy Realted Questions 
+💡 UnderWriter Recommendation: Draft client emails from previous cases
+
+**Example Questions:**
+Property: `46 Creekstone Ln, Dawsonville, GA 30534`  
+Terms: `Does insurance cover war damage?`  
+Recommendation: `My kitchen caught fire, need help`
+
+⚠️ **Please rephrase your question to fit one of these categories.**""",
+                "message": "General response provided - question out of scope",
+                "agent_type": "General Response Agent"
             }
-        }
-    
-    def general_response_node(self, state):
-        """Handles general questions"""
-        return {
-            "status": "success",
-            "response": "I'm here to help! How can I assist you today?",
-            "message": "General response provided"
         }
     
     def error_node(self, state):
