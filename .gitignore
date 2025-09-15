@@ -1,0 +1,9 @@
+venv/
+
+.env
+
+src/langgraph_agent/tools/rag_agent/chroma_db
+src/langgraph_agent/tools/rag_agent/markitdown
+__pycache__/
+*.py[cod]
+

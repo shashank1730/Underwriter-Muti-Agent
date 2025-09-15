@@ -1,0 +1,1731 @@
+{
+    "buildingPermits": null,
+    "contact_recipients": [
+        {
+            "agent_reason": 1,
+            "zpro": null,
+            "recent_sales": 1,
+            "review_count": 903,
+            "display_name": "Troy Moritz",
+            "badge_type": "Premier Agent",
+            "business_name": "24/7 Realty Brokered by REAL",
+            "rating_average": 5,
+            "phone": {
+                "prefix": "855",
+                "areacode": "619",
+                "number": "1084"
+            },
+            "zuid": "X1-ZUtoi6eup4pfyh_85kue",
+            "image_url": "https://photos.zillowstatic.com/fp/00a55fb495df394dcd449ed338b59bac-h_g.jpg"
+        }
+    ],
+    "longitude": -117.138954,
+    "countyFIPS": "06065",
+    "imgSrc": "https://photos.zillowstatic.com/fp/b7ef5f8434ec50601b4c6689d8d2ac4d-p_d.jpg",
+    "livingAreaValue": 1275,
+    "streetAddress": "29971 Villa Alturas Dr",
+    "county": "Riverside County",
+    "monthlyHoaFee": 120,
+    "timeZone": "America/Los_Angeles",
+    "taxHistory": [
+        {
+            "time": 1757952586735,
+            "valueIncreaseRate": 0.019996027,
+            "taxIncreaseRate": 0,
+            "taxPaid": null,
+            "value": 225872
+        },
+        {
+            "time": 1726416586735,
+            "valueIncreaseRate": 0.019995118,
+            "taxIncreaseRate": 0.008656163,
+            "taxPaid": 2964.38,
+            "value": 221444
+        },
+        {
+            "time": 1694794186735,
+            "valueIncreaseRate": 0.019995583,
+            "taxIncreaseRate": 0.025972722,
+            "taxPaid": 2938.94,
+            "value": 217103
+        },
+        {
+            "time": 1663258186735,
+            "valueIncreaseRate": 0.019992812,
+            "taxIncreaseRate": 0.02343748,
+            "taxPaid": 2864.54,
+            "value": 212847
+        },
+        {
+            "time": 1631722186735,
+            "valueIncreaseRate": 0.010356548,
+            "taxIncreaseRate": 0.0119454935,
+            "taxPaid": 2798.94,
+            "value": 208675
+        },
+        {
+            "time": 1600186186735,
+            "valueIncreaseRate": 0.019996345,
+            "taxIncreaseRate": 0.015568167,
+            "taxPaid": 2765.9,
+            "value": 206536
+        },
+        {
+            "time": 1568563786735,
+            "valueIncreaseRate": 0.019998288,
+            "taxIncreaseRate": 0.021675207,
+            "taxPaid": 2723.5,
+            "value": 202487
+        },
+        {
+            "time": 1537027786735,
+            "valueIncreaseRate": 0.01999219,
+            "taxIncreaseRate": 0.019185305,
+            "taxPaid": 2665.72,
+            "value": 198517
+        },
+        {
+            "time": 1505491786735,
+            "valueIncreaseRate": 0.019993607,
+            "taxIncreaseRate": 0,
+            "taxPaid": 2615.54,
+            "value": 194626
+        },
+        {
+            "time": 1473955786735,
+            "valueIncreaseRate": 0.015238338,
+            "taxIncreaseRate": 0.038159937,
+            "taxPaid": 2615.54,
+            "value": 190811
+        },
+        {
+            "time": 1442333386735,
+            "valueIncreaseRate": 0.019965485,
+            "taxIncreaseRate": 0.032126408,
+            "taxPaid": 2519.4,
+            "value": 187947
+        },
+        {
+            "time": 1410797386735,
+            "valueIncreaseRate": 0.0045246896,
+            "taxIncreaseRate": 0,
+            "taxPaid": 2440.98,
+            "value": 184268
+        },
+        {
+            "time": 1379261386735,
+            "valueIncreaseRate": 0.01999533,
+            "taxIncreaseRate": 0,
+            "taxPaid": null,
+            "value": 183438
+        },
+        {
+            "time": 1347725386735,
+            "valueIncreaseRate": 0.019998185,
+            "taxIncreaseRate": 0,
+            "taxPaid": null,
+            "value": 179842
+        },
+        {
+            "time": 1316102986735,
+            "valueIncreaseRate": -0.10617459,
+            "taxIncreaseRate": 0,
+            "taxPaid": null,
+            "value": 176316
+        },
+        {
+            "time": 1284566986735,
+            "valueIncreaseRate": -0.002382024,
+            "taxIncreaseRate": 0,
+            "taxPaid": null,
+            "value": 197260
+        },
+        {
+            "time": 1253030986735,
+            "valueIncreaseRate": 0.019994326,
+            "taxIncreaseRate": 0,
+            "taxPaid": null,
+            "value": 197731
+        },
+        {
+            "time": 1221494986735,
+            "valueIncreaseRate": 0.019994212,
+            "taxIncreaseRate": 0,
+            "taxPaid": null,
+            "value": 193855
+        },
+        {
+            "time": 1189872586735,
+            "valueIncreaseRate": 0.15247712,
+            "taxIncreaseRate": 0,
+            "taxPaid": null,
+            "value": 190055
+        },
+        {
+            "time": 1158336586735,
+            "valueIncreaseRate": 0.01999666,
+            "taxIncreaseRate": 0,
+            "taxPaid": null,
+            "value": 164910
+        },
+        {
+            "time": 1126800586735,
+            "valueIncreaseRate": 0.039021883,
+            "taxIncreaseRate": 0,
+            "taxPaid": null,
+            "value": 161677
+        },
+        {
+            "time": 1063642186735,
+            "valueIncreaseRate": 0.01999279,
+            "taxIncreaseRate": 0,
+            "taxPaid": null,
+            "value": 155605
+        },
+        {
+            "time": 1032106186735,
+            "valueIncreaseRate": 0.019991308,
+            "taxIncreaseRate": 0,
+            "taxPaid": null,
+            "value": 152555
+        },
+        {
+            "time": 1000570186735,
+            "valueIncreaseRate": 0.0199955,
+            "taxIncreaseRate": -0.00247739,
+            "taxPaid": 2061.52,
+            "value": 149565
+        },
+        {
+            "time": 969034186735,
+            "valueIncreaseRate": 0,
+            "taxIncreaseRate": 0,
+            "taxPaid": 2066.64,
+            "value": 146633
+        }
+    ],
+    "dateSold": null,
+    "annualHomeownersInsurance": 2667,
+    "state": "CA",
+    "listed_by": {
+        "agent_reason": 3,
+        "zpro": false,
+        "recent_sales": 1,
+        "zuid": "X1-ZUzrort4i26n7t_6v82t",
+        "review_count": 10,
+        "display_name": "Davida Parker",
+        "profile_url": "https://www.zillow.com/profile/DavidaParkerRealtor/",
+        "business_name": "Davida Parker, Broker",
+        "rating_average": 5,
+        "phone": {
+            "prefix": "707",
+            "areacode": "760",
+            "number": "4607"
+        },
+        "badge_type": "Listing Agent",
+        "image_url": "https://photos.zillowstatic.com/fp/41799d635f79b873a6c653667051c063-h_n.jpg"
+    },
+    "yearBuilt": 1975,
+    "brokerageName": "Davida Parker, Broker",
+    "description": "Your South Temecula Opportunity Awaits!\r\r\n\r\r\nDiscover the charm of single-level living on a large corner lot in one of South Temecula\u2019s most beloved and established neighborhoods, Lake Village. Nestled among tree lined streets where pride of ownership shines, this 3-bedroom, 2-bath home offers both comfort and potential.\r\r\n\r\r\nStep inside the double doors, to the wide foyer, vaulted ceilings, cozy fireplace, with French doors leading to your spacious entertainer\u2019s backyard complete with built-in BBQ and sparkling in-ground pool. With a little vision and sweat equity, this home can be transformed into your personal retreat.\r\r\n\r\r\nLiving in Lake Village means more than just owning a home, it\u2019s becoming part of a lifestyle. Residents enjoy two scenic lakes, walking and hiking paths, community pool, playgrounds, basketball and tennis courts, picnic areas, and the rare distinction of being a Certified Wildlife Habitat.\r\r\n\r\r\nAll of this just minutes from Temecula Valley Wine Country, Old Town Temecula, Pechanga Casino, shopping, dining, restaurants, Temecula Valley Hospital, schools, and the community library, with easy access to the I-15.\r\r\n\r\r\nVilla Alturas is being sold As-Is and is ready for you to make it your own.",
+    "climate": {
+        "windSources": {
+            "primary": {
+                "insuranceRecommendation": "NOT_CRITICAL",
+                "riskScore": {
+                    "label": "MINIMAL",
+                    "max": 10,
+                    "value": 1
+                },
+                "probability": {},
+                "source": {
+                    "url": "https://firststreet.org/property/29971-villa-alturas-dr-temecula-ca-92592/606277532_fsid"
+                },
+                "insuranceSeparatePolicy": "LIKELY_OPTIONAL",
+                "historicCountAll": 22
+            }
+        },
+        "floodSources": {
+            "primary": {
+                "insuranceRecommendation": "NOT_CRITICAL",
+                "riskScore": {
+                    "label": "MINIMAL",
+                    "max": 10,
+                    "value": 1
+                },
+                "femaZone": "X_UNSHADED",
+                "source": {
+                    "url": "https://firststreet.org/property/29971-villa-alturas-dr-temecula-ca-92592/606277532_fsid"
+                },
+                "probability": [
+                    {
+                        "relativeYear": 0,
+                        "probability": 0
+                    },
+                    {
+                        "relativeYear": 5,
+                        "probability": 0
+                    },
+                    {
+                        "relativeYear": 10,
+                        "probability": 0
+                    },
+                    {
+                        "relativeYear": 15,
+                        "probability": 0
+                    },
+                    {
+                        "relativeYear": 20,
+                        "probability": 0
+                    },
+                    {
+                        "relativeYear": 25,
+                        "probability": 0
+                    },
+                    {
+                        "relativeYear": 30,
+                        "probability": 0
+                    }
+                ],
+                "insuranceSeparatePolicy": "NOT_REQUIRED",
+                "historicCountPropertyAll": 0
+            }
+        },
+        "fireSources": {
+            "primary": {
+                "insuranceRecommendation": "CRITICAL",
+                "riskScore": {
+                    "label": "SEVERE",
+                    "max": 10,
+                    "value": 7
+                },
+                "probability": [
+                    {
+                        "relativeYear": 0,
+                        "probability": 0.0057999999262393
+                    },
+                    {
+                        "relativeYear": 5,
+                        "probability": 0.035000000149012
+                    },
+                    {
+                        "relativeYear": 10,
+                        "probability": 0.064599998295307
+                    },
+                    {
+                        "relativeYear": 15,
+                        "probability": 0.094400003552437
+                    },
+                    {
+                        "relativeYear": 20,
+                        "probability": 0.12430000305176
+                    },
+                    {
+                        "relativeYear": 25,
+                        "probability": 0.15430000424385
+                    },
+                    {
+                        "relativeYear": 30,
+                        "probability": 0.18430000543594
+                    }
+                ],
+                "source": {
+                    "url": "https://firststreet.org/property/29971-villa-alturas-dr-temecula-ca-92592/606277532_fsid"
+                },
+                "insuranceSeparatePolicy": "LIKELY_REQUIRED",
+                "historicCountAll": 82
+            }
+        },
+        "heatSources": {
+            "primary": {
+                "percentile98Temp": 100,
+                "hotDays": [
+                    {
+                        "relativeYear": 0,
+                        "dayCount": 7
+                    },
+                    {
+                        "relativeYear": 5,
+                        "dayCount": 10
+                    },
+                    {
+                        "relativeYear": 10,
+                        "dayCount": 12
+                    },
+                    {
+                        "relativeYear": 15,
+                        "dayCount": 15
+                    },
+                    {
+                        "relativeYear": 20,
+                        "dayCount": 18
+                    },
+                    {
+                        "relativeYear": 25,
+                        "dayCount": 20
+                    },
+                    {
+                        "relativeYear": 30,
+                        "dayCount": 23
+                    }
+                ],
+                "riskScore": {
+                    "label": "SEVERE",
+                    "max": 10,
+                    "value": 7
+                },
+                "source": {
+                    "url": "https://firststreet.org/property/29971-villa-alturas-dr-temecula-ca-92592/606277532_fsid"
+                }
+            }
+        },
+        "airSources": {
+            "primary": {
+                "source": {
+                    "url": "https://firststreet.org/property/29971-villa-alturas-dr-temecula-ca-92592/606277532_fsid"
+                },
+                "riskScore": {
+                    "label": "MAJOR",
+                    "max": 10,
+                    "value": 6
+                },
+                "badAirDays": [
+                    {
+                        "relativeYear": 0,
+                        "dayCount": 10
+                    },
+                    {
+                        "relativeYear": 5,
+                        "dayCount": 10
+                    },
+                    {
+                        "relativeYear": 10,
+                        "dayCount": 11
+                    },
+                    {
+                        "relativeYear": 15,
+                        "dayCount": 11
+                    },
+                    {
+                        "relativeYear": 20,
+                        "dayCount": 11
+                    },
+                    {
+                        "relativeYear": 25,
+                        "dayCount": 12
+                    },
+                    {
+                        "relativeYear": 30,
+                        "dayCount": 12
+                    }
+                ]
+            }
+        }
+    },
+    "latitude": 33.497368,
+    "nearbyHomes": [
+        {
+            "bathrooms": 3,
+            "newConstructionType": null,
+            "lotAreaUnits": "Square Feet",
+            "formattedChip": {
+                "location": [
+                    {
+                        "fullValue": "29957 Villa Alturas Dr"
+                    },
+                    {
+                        "fullValue": null
+                    }
+                ]
+            },
+            "isPremierBuilder": false,
+            "isShowcaseListing": false,
+            "hdpUrl": "/homedetails/29957-Villa-Alturas-Dr-Temecula-CA-92592/18174070_zpid/",
+            "lotAreaValue": 7841,
+            "parentRegion": null,
+            "address": {
+                "city": "Temecula",
+                "state": "CA",
+                "streetAddress": "29957 Villa Alturas Dr",
+                "zipcode": "92592"
+            },
+            "state": "CA",
+            "attributionInfo": {
+                "agentPhoneNumber": null,
+                "trueStatus": null,
+                "providerLogo": null,
+                "mlsId": "SR24072789",
+                "brokerName": null,
+                "mlsName": null,
+                "brokerPhoneNumber": null,
+                "agentName": null
+            },
+            "latitude": 33.497192,
+            "homeStatus": "SOLD",
+            "listing_sub_type": {
+                "is_FSBA": false,
+                "is_forAuction": false,
+                "is_comingSoon": false,
+                "is_foreclosure": false,
+                "is_bankOwned": false,
+                "is_newHome": false,
+                "is_FSBO": false
+            },
+            "price": 675000,
+            "listingMetadata": {
+                "comminglingCategoryIsRulesApplicable": false
+            },
+            "bedrooms": 4,
+            "propertyTypeDimension": "Single Family",
+            "listingTypeDimension": "Unknown Listed By",
+            "lotSize": 7841,
+            "miniCardPhotos": [
+                {
+                    "url": "https://photos.zillowstatic.com/fp/503fd352206d862a943509c2b759431d-p_c.jpg"
+                }
+            ],
+            "zpid": 18174070,
+            "hdpTypeDimension": "RecentlySold",
+            "livingArea": 1987,
+            "longitude": -117.13904,
+            "livingAreaUnitsShort": "sqft",
+            "providerListingID": null,
+            "homeType": "SINGLE_FAMILY",
+            "livingAreaUnits": "Square Feet",
+            "currency": "USD",
+            "livingAreaValue": 1987
+        },
+        {
+            "bathrooms": 2,
+            "newConstructionType": null,
+            "lotAreaUnits": "Square Feet",
+            "formattedChip": {
+                "location": [
+                    {
+                        "fullValue": "42885 El Domino Pl"
+                    },
+                    {
+                        "fullValue": null
+                    }
+                ]
+            },
+            "isPremierBuilder": false,
+            "isShowcaseListing": false,
+            "hdpUrl": "/homedetails/42885-El-Domino-Pl-Temecula-CA-92592/18174084_zpid/",
+            "lotAreaValue": 7840,
+            "parentRegion": null,
+            "address": {
+                "city": "Temecula",
+                "state": "CA",
+                "streetAddress": "42885 El Domino Pl",
+                "zipcode": "92592"
+            },
+            "state": "CA",
+            "attributionInfo": {
+                "agentPhoneNumber": null,
+                "trueStatus": null,
+                "providerLogo": null,
+                "mlsId": null,
+                "brokerName": null,
+                "mlsName": null,
+                "brokerPhoneNumber": null,
+                "agentName": null
+            },
+            "latitude": 33.497116,
+            "homeStatus": "OTHER",
+            "listing_sub_type": {
+                "is_FSBA": false,
+                "is_forAuction": false,
+                "is_comingSoon": false,
+                "is_foreclosure": false,
+                "is_bankOwned": false,
+                "is_newHome": false,
+                "is_FSBO": false
+            },
+            "price": 630000,
+            "listingMetadata": {
+                "comminglingCategoryIsRulesApplicable": false
+            },
+            "bedrooms": 3,
+            "propertyTypeDimension": "Single Family",
+            "listingTypeDimension": "Unknown Listed By",
+            "lotSize": 7840,
+            "miniCardPhotos": [
+                {
+                    "url": "https://maps.googleapis.com/maps/api/streetview?location=42885+El+Domino+Pl%2C+Temecula%2C+CA+92592&size=316x234&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&&signature=RxmgBm63QRkfO-sk5GsbeEcdD7k="
+                }
+            ],
+            "zpid": 18174084,
+            "hdpTypeDimension": "Zestimate",
+            "livingArea": 1299,
+            "longitude": -117.13871,
+            "livingAreaUnitsShort": "sqft",
+            "providerListingID": null,
+            "homeType": "SINGLE_FAMILY",
+            "livingAreaUnits": "Square Feet",
+            "currency": "USD",
+            "livingAreaValue": 1299
+        },
+        {
+            "hdpTypeDimension": "Zestimate",
+            "lotAreaUnits": "Square Feet",
+            "isShowcaseListing": false,
+            "longitude": -117.13866,
+            "parentRegion": null,
+            "address": {
+                "city": "Temecula",
+                "state": "CA",
+                "streetAddress": "30011 Villa Alturas Dr",
+                "zipcode": "92592"
+            },
+            "livingAreaValue": 1913,
+            "lotSize": 9147,
+            "zpid": 18174010,
+            "livingAreaUnitsShort": "sqft",
+            "homeType": "SINGLE_FAMILY",
+            "livingAreaUnits": "Square Feet",
+            "bathrooms": 2,
+            "state": "CA",
+            "formattedChip": {
+                "location": [
+                    {
+                        "fullValue": "30011 Villa Alturas Dr"
+                    },
+                    {
+                        "fullValue": null
+                    }
+                ]
+            },
+            "isPremierBuilder": false,
+            "hdpUrl": "/homedetails/30011-Villa-Alturas-Dr-Temecula-CA-92592/18174010_zpid/",
+            "lotAreaValue": 9147,
+            "attributionInfo": {
+                "agentPhoneNumber": null,
+                "trueStatus": null,
+                "providerLogo": null,
+                "mlsId": null,
+                "brokerName": null,
+                "mlsName": null,
+                "brokerPhoneNumber": null,
+                "agentName": null
+            },
+            "homeStatus": "OTHER",
+            "latitude": 33.4976,
+            "listingMetadata": {
+                "comminglingCategoryIsRulesApplicable": false
+            },
+            "bedrooms": 4,
+            "propertyTypeDimension": "Single Family",
+            "newConstructionType": null,
+            "yearBuilt": 1976,
+            "listingTypeDimension": "Unknown Listed By",
+            "livingArea": 1913,
+            "providerListingID": null,
+            "miniCardPhotos": [
+                {
+                    "url": "https://maps.googleapis.com/maps/api/streetview?location=30011+Villa+Alturas+Dr%2C+Temecula%2C+CA+92592&size=316x234&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&&signature=oeg3Ab8ewC_uWGr2q_BhN-uwy0c="
+                }
+            ],
+            "currency": "USD",
+            "price": 662700,
+            "listing_sub_type": {
+                "is_FSBA": false,
+                "is_forAuction": false,
+                "is_comingSoon": false,
+                "is_foreclosure": false,
+                "is_bankOwned": false,
+                "is_newHome": false,
+                "is_FSBO": false
+            }
+        },
+        {
+            "bathrooms": 2,
+            "newConstructionType": null,
+            "lotAreaUnits": "Square Feet",
+            "formattedChip": {
+                "location": [
+                    {
+                        "fullValue": "29943 Villa Alturas Dr"
+                    },
+                    {
+                        "fullValue": null
+                    }
+                ]
+            },
+            "isPremierBuilder": false,
+            "isShowcaseListing": false,
+            "hdpUrl": "/homedetails/29943-Villa-Alturas-Dr-Temecula-CA-92592/18174071_zpid/",
+            "lotAreaValue": 8276,
+            "parentRegion": null,
+            "address": {
+                "city": "Temecula",
+                "state": "CA",
+                "streetAddress": "29943 Villa Alturas Dr",
+                "zipcode": "92592"
+            },
+            "state": "CA",
+            "attributionInfo": {
+                "agentPhoneNumber": null,
+                "trueStatus": null,
+                "providerLogo": null,
+                "mlsId": null,
+                "brokerName": null,
+                "mlsName": null,
+                "brokerPhoneNumber": null,
+                "agentName": null
+            },
+            "latitude": 33.497005,
+            "homeStatus": "OTHER",
+            "listing_sub_type": {
+                "is_FSBA": false,
+                "is_forAuction": false,
+                "is_comingSoon": false,
+                "is_foreclosure": false,
+                "is_bankOwned": false,
+                "is_newHome": false,
+                "is_FSBO": false
+            },
+            "price": 605200,
+            "listingMetadata": {
+                "comminglingCategoryIsRulesApplicable": false
+            },
+            "bedrooms": 3,
+            "propertyTypeDimension": "Single Family",
+            "listingTypeDimension": "Unknown Listed By",
+            "lotSize": 8276,
+            "miniCardPhotos": [
+                {
+                    "url": "https://maps.googleapis.com/maps/api/streetview?location=29943+Villa+Alturas+Dr%2C+Temecula%2C+CA+92592&size=316x234&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&&signature=kPAIest5sEGASy1KU10OBmIs0vA="
+                }
+            ],
+            "zpid": 18174071,
+            "hdpTypeDimension": "Zestimate",
+            "livingArea": 1526,
+            "longitude": -117.139046,
+            "livingAreaUnitsShort": "sqft",
+            "providerListingID": null,
+            "homeType": "SINGLE_FAMILY",
+            "livingAreaUnits": "Square Feet",
+            "currency": "USD",
+            "livingAreaValue": 1526
+        },
+        {
+            "bathrooms": 2,
+            "newConstructionType": null,
+            "lotAreaUnits": "Square Feet",
+            "formattedChip": {
+                "location": [
+                    {
+                        "fullValue": "42850 Villa Terrace Ct"
+                    },
+                    {
+                        "fullValue": null
+                    }
+                ]
+            },
+            "isPremierBuilder": false,
+            "isShowcaseListing": false,
+            "hdpUrl": "/homedetails/42850-Villa-Terrace-Ct-Temecula-CA-92592/18174054_zpid/",
+            "lotAreaValue": 9583,
+            "parentRegion": null,
+            "address": {
+                "city": "Temecula",
+                "state": "CA",
+                "streetAddress": "42850 Villa Terrace Ct",
+                "zipcode": "92592"
+            },
+            "state": "CA",
+            "attributionInfo": {
+                "agentPhoneNumber": null,
+                "trueStatus": null,
+                "providerLogo": null,
+                "mlsId": null,
+                "brokerName": null,
+                "mlsName": null,
+                "brokerPhoneNumber": null,
+                "agentName": null
+            },
+            "latitude": 33.497448,
+            "homeStatus": "OTHER",
+            "listing_sub_type": {
+                "is_FSBA": false,
+                "is_forAuction": false,
+                "is_comingSoon": false,
+                "is_foreclosure": false,
+                "is_bankOwned": false,
+                "is_newHome": false,
+                "is_FSBO": false
+            },
+            "price": 696400,
+            "listingMetadata": {
+                "comminglingCategoryIsRulesApplicable": false
+            },
+            "bedrooms": 3,
+            "propertyTypeDimension": "Single Family",
+            "listingTypeDimension": "Unknown Listed By",
+            "lotSize": 9583,
+            "miniCardPhotos": [
+                {
+                    "url": "https://maps.googleapis.com/maps/api/streetview?location=42850+Villa+Terrace+Ct%2C+Temecula%2C+CA+92592&size=200x200&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=ehhbpo-p_cdFqLI_YcXlrpyxYZE="
+                }
+            ],
+            "zpid": 18174054,
+            "hdpTypeDimension": "Zestimate",
+            "livingArea": 1526,
+            "longitude": -117.13946,
+            "livingAreaUnitsShort": "sqft",
+            "providerListingID": null,
+            "homeType": "SINGLE_FAMILY",
+            "livingAreaUnits": "Square Feet",
+            "currency": "USD",
+            "livingAreaValue": 1526
+        },
+        {
+            "bathrooms": 2,
+            "newConstructionType": null,
+            "lotAreaUnits": "Acres",
+            "formattedChip": {
+                "location": [
+                    {
+                        "fullValue": "30010 Del Mar Ct"
+                    },
+                    {
+                        "fullValue": null
+                    }
+                ]
+            },
+            "isPremierBuilder": false,
+            "isShowcaseListing": false,
+            "hdpUrl": "/homedetails/30010-Del-Mar-Ct-Temecula-CA-92592/18174033_zpid/",
+            "lotAreaValue": 0.25998622589532,
+            "parentRegion": null,
+            "address": {
+                "city": "Temecula",
+                "state": "CA",
+                "streetAddress": "30010 Del Mar Ct",
+                "zipcode": "92592"
+            },
+            "state": "CA",
+            "attributionInfo": {
+                "agentPhoneNumber": null,
+                "trueStatus": null,
+                "providerLogo": null,
+                "mlsId": null,
+                "brokerName": null,
+                "mlsName": null,
+                "brokerPhoneNumber": null,
+                "agentName": null
+            },
+            "latitude": 33.497364,
+            "homeStatus": "OTHER",
+            "listing_sub_type": {
+                "is_FSBA": false,
+                "is_forAuction": false,
+                "is_comingSoon": false,
+                "is_foreclosure": false,
+                "is_bankOwned": false,
+                "is_newHome": false,
+                "is_FSBO": false
+            },
+            "price": 632800,
+            "listingMetadata": {
+                "comminglingCategoryIsRulesApplicable": false
+            },
+            "bedrooms": 3,
+            "propertyTypeDimension": "Single Family",
+            "listingTypeDimension": "Unknown Listed By",
+            "lotSize": 11324,
+            "miniCardPhotos": [
+                {
+                    "url": "https://maps.googleapis.com/maps/api/staticmap?mobile=false&sensor=true&maptype=satellite&size=316x234&zoom=17&center=33.49736404418945,-117.13836669921875&key=AIzaSyBWYJWCA8FNMQvSe_k3LKfDGJaEgdKwsco&&signature=li-DZODdRoxho7zQAH6FKOMVGfM="
+                }
+            ],
+            "zpid": 18174033,
+            "hdpTypeDimension": "Zestimate",
+            "livingArea": 1526,
+            "longitude": -117.13837,
+            "livingAreaUnitsShort": "sqft",
+            "providerListingID": null,
+            "homeType": "SINGLE_FAMILY",
+            "livingAreaUnits": "Square Feet",
+            "currency": "USD",
+            "livingAreaValue": 1526
+        },
+        {
+            "bathrooms": 3,
+            "newConstructionType": null,
+            "lotAreaUnits": "Square Feet",
+            "formattedChip": {
+                "location": [
+                    {
+                        "fullValue": "29986 Villa Alturas Dr"
+                    },
+                    {
+                        "fullValue": null
+                    }
+                ]
+            },
+            "isPremierBuilder": false,
+            "isShowcaseListing": false,
+            "hdpUrl": "/homedetails/29986-Villa-Alturas-Dr-Temecula-CA-92592/18174053_zpid/",
+            "lotAreaValue": 10018,
+            "parentRegion": null,
+            "address": {
+                "city": "Temecula",
+                "state": "CA",
+                "streetAddress": "29986 Villa Alturas Dr",
+                "zipcode": "92592"
+            },
+            "state": "CA",
+            "attributionInfo": {
+                "agentPhoneNumber": null,
+                "trueStatus": null,
+                "providerLogo": null,
+                "mlsId": null,
+                "brokerName": null,
+                "mlsName": null,
+                "brokerPhoneNumber": null,
+                "agentName": null
+            },
+            "latitude": 33.497715,
+            "homeStatus": "OTHER",
+            "listing_sub_type": {
+                "is_FSBA": false,
+                "is_forAuction": false,
+                "is_comingSoon": false,
+                "is_foreclosure": false,
+                "is_bankOwned": false,
+                "is_newHome": false,
+                "is_FSBO": false
+            },
+            "price": 767900,
+            "listingMetadata": {
+                "comminglingCategoryIsRulesApplicable": false
+            },
+            "bedrooms": 5,
+            "propertyTypeDimension": "Single Family",
+            "listingTypeDimension": "Unknown Listed By",
+            "lotSize": 10018,
+            "miniCardPhotos": [
+                {
+                    "url": "https://maps.googleapis.com/maps/api/streetview?location=29986+Villa+Alturas+Dr%2C+Temecula%2C+CA+92592&size=316x234&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&&signature=5xo_eXtbK-AmI-_TqaJvgZSyxLQ="
+                }
+            ],
+            "zpid": 18174053,
+            "hdpTypeDimension": "Zestimate",
+            "livingArea": 3123,
+            "longitude": -117.13937,
+            "livingAreaUnitsShort": "sqft",
+            "providerListingID": null,
+            "homeType": "SINGLE_FAMILY",
+            "livingAreaUnits": "Square Feet",
+            "currency": "USD",
+            "livingAreaValue": 3123
+        },
+        {
+            "bathrooms": 2.5,
+            "newConstructionType": null,
+            "lotAreaUnits": "Square Feet",
+            "formattedChip": {
+                "location": [
+                    {
+                        "fullValue": "42901 El Domino Pl"
+                    },
+                    {
+                        "fullValue": null
+                    }
+                ]
+            },
+            "isPremierBuilder": false,
+            "isShowcaseListing": false,
+            "hdpUrl": "/homedetails/42901-El-Domino-Pl-Temecula-CA-92592/52502987_zpid/",
+            "lotAreaValue": 7405,
+            "parentRegion": null,
+            "address": {
+                "city": "Temecula",
+                "state": "CA",
+                "streetAddress": "42901 El Domino Pl",
+                "zipcode": "92592"
+            },
+            "state": "CA",
+            "attributionInfo": {
+                "agentPhoneNumber": null,
+                "trueStatus": null,
+                "providerLogo": null,
+                "mlsId": null,
+                "brokerName": null,
+                "mlsName": null,
+                "brokerPhoneNumber": null,
+                "agentName": null
+            },
+            "latitude": 33.496944,
+            "homeStatus": "OTHER",
+            "listing_sub_type": {
+                "is_FSBA": false,
+                "is_forAuction": false,
+                "is_comingSoon": false,
+                "is_foreclosure": false,
+                "is_bankOwned": false,
+                "is_newHome": false,
+                "is_FSBO": false
+            },
+            "price": 640000,
+            "listingMetadata": {
+                "comminglingCategoryIsRulesApplicable": false
+            },
+            "bedrooms": 4,
+            "propertyTypeDimension": "Single Family",
+            "listingTypeDimension": "Unknown Listed By",
+            "lotSize": 7405,
+            "miniCardPhotos": [
+                {
+                    "url": "https://maps.googleapis.com/maps/api/staticmap?mobile=false&sensor=true&maptype=satellite&size=316x234&zoom=17&center=33.496944427490234,-117.13859558105469&key=AIzaSyBWYJWCA8FNMQvSe_k3LKfDGJaEgdKwsco&&signature=IVFJMPSsLC-3mUp96-dcVI_6Lc8="
+                }
+            ],
+            "zpid": 52502987,
+            "hdpTypeDimension": "Zestimate",
+            "livingArea": 1987,
+            "longitude": -117.138596,
+            "livingAreaUnitsShort": "sqft",
+            "providerListingID": null,
+            "homeType": "SINGLE_FAMILY",
+            "livingAreaUnits": "Square Feet",
+            "currency": "USD",
+            "livingAreaValue": 1987
+        }
+    ],
+    "priceHistory": [
+        {
+            "priceChangeRate": 0,
+            "date": "2025-09-08",
+            "source": "CRMLS",
+            "postingIsRental": false,
+            "time": 1757289600000,
+            "sellerAgent": null,
+            "showCountyLink": false,
+            "attributeSource": {
+                "infoString2": "CRMLS",
+                "infoString3": "https://photos.zillowstatic.com/fp/cb8caaa629c0af2058e60add67b2f2ee-zillow_web_logo_inf_11.jpg",
+                "infoString1": "SW25190592"
+            },
+            "pricePerSquareFoot": 498,
+            "buyerAgent": null,
+            "event": "Listed for sale",
+            "price": 634900
+        },
+        {
+            "priceChangeRate": 0,
+            "date": "2025-09-03",
+            "source": "CRMLS",
+            "postingIsRental": false,
+            "time": 1756857600000,
+            "sellerAgent": null,
+            "showCountyLink": false,
+            "attributeSource": {
+                "infoString2": "CRMLS",
+                "infoString3": "https://photos.zillowstatic.com/fp/cb8caaa629c0af2058e60add67b2f2ee-zillow_web_logo_inf_11.jpg",
+                "infoString1": "SW25190592"
+            },
+            "pricePerSquareFoot": 498,
+            "buyerAgent": null,
+            "event": "Contingent",
+            "price": 634900
+        },
+        {
+            "priceChangeRate": 2.628,
+            "date": "2025-08-23",
+            "source": "CRMLS",
+            "postingIsRental": false,
+            "time": 1755907200000,
+            "sellerAgent": null,
+            "showCountyLink": false,
+            "attributeSource": {
+                "infoString2": "CRMLS",
+                "infoString3": "https://photos.zillowstatic.com/fp/cb8caaa629c0af2058e60add67b2f2ee-zillow_web_logo_inf_11.jpg",
+                "infoString1": "SW25190592"
+            },
+            "pricePerSquareFoot": 498,
+            "buyerAgent": null,
+            "event": "Listed for sale",
+            "price": 634900
+        },
+        {
+            "priceChangeRate": 0,
+            "date": "2010-05-07",
+            "source": "Public Record",
+            "postingIsRental": false,
+            "time": 1273190400000,
+            "sellerAgent": null,
+            "showCountyLink": false,
+            "attributeSource": {
+                "infoString2": "Public Record",
+                "infoString3": null,
+                "infoString1": null
+            },
+            "pricePerSquareFoot": 137,
+            "buyerAgent": null,
+            "event": "Sold",
+            "price": 175000
+        }
+    ],
+    "neighborhoodMapThumb": [
+        {
+            "url": "https://photos.zillowstatic.com/fp/b7ef5f8434ec50601b4c6689d8d2ac4d-p_c.jpg"
+        }
+    ],
+    "schools": [
+        {
+            "link": "https://www.greatschools.org/california/temecula/4511-Vail-Elementary-School/",
+            "rating": 3,
+            "totalCount": null,
+            "distance": 0.4,
+            "assigned": null,
+            "name": "Vail Elementary School",
+            "studentsPerTeacher": null,
+            "isAssigned": null,
+            "size": null,
+            "level": "Elementary",
+            "grades": "K-5",
+            "type": "Public"
+        },
+        {
+            "link": "https://www.greatschools.org/california/temecula/4500-Margarita-Middle-School/",
+            "rating": 5,
+            "totalCount": null,
+            "distance": 1.5,
+            "assigned": null,
+            "name": "Margarita Middle School",
+            "studentsPerTeacher": null,
+            "isAssigned": null,
+            "size": null,
+            "level": "Middle",
+            "grades": "6-8",
+            "type": "Public"
+        },
+        {
+            "link": "https://www.greatschools.org/california/temecula/4510-Temecula-Valley-High-School/",
+            "rating": 9,
+            "totalCount": null,
+            "distance": 1.3,
+            "assigned": null,
+            "name": "Temecula Valley High School",
+            "studentsPerTeacher": null,
+            "isAssigned": null,
+            "size": null,
+            "level": "High",
+            "grades": "9-12",
+            "type": "Public"
+        }
+    ],
+    "rentZestimate": 3184,
+    "city": "Temecula",
+    "providerListingID": null,
+    "currency": "USD",
+    "listingProvider": null,
+    "propertyTaxRate": 1.19,
+    "isShowcaseListing": false,
+    "openHouseSchedule": [
+        {
+            "startTime": "2025-09-15 15:00:00",
+            "endTime": "2025-09-15 18:00:00"
+        }
+    ],
+    "mortgageRates": null,
+    "address": {
+        "community": null,
+        "city": "Temecula",
+        "state": "CA",
+        "neighborhood": null,
+        "subdivision": null,
+        "streetAddress": "29971 Villa Alturas Dr",
+        "zipcode": "92592"
+    },
+    "cityId": 7386,
+    "timeOnZillow": "23 days",
+    "priceChange": null,
+    "zestimate": 640900,
+    "zpid": 18174069,
+    "countyId": 2832,
+    "homeType": "SINGLE_FAMILY",
+    "livingAreaUnits": "sqft",
+    "pageViewCount": 4583,
+    "homeInsights": [
+        {
+            "insights": [
+                {
+                    "treatmentId": "model_0",
+                    "modelId": "z-nrt-pdc-llm-tags",
+                    "phrases": [
+                        "Sparkling in-ground pool",
+                        "Cozy fireplace",
+                        "Tree lined streets",
+                        "Corner lot",
+                        "Built-in bbq",
+                        "French doors",
+                        "Vaulted ceilings"
+                    ]
+                },
+                {
+                    "treatmentId": "model_1",
+                    "modelId": "z-nrt-pdc-llm-tags",
+                    "phrases": [
+                        "Sparkling in-ground pool",
+                        "Cozy fireplace",
+                        "Tree lined streets",
+                        "Corner lot",
+                        "Built-in bbq",
+                        "French doors",
+                        "Vaulted ceilings"
+                    ]
+                }
+            ]
+        }
+    ],
+    "bathrooms": 2,
+    "neighborhoodRegion": null,
+    "zipcode": "92592",
+    "building": null,
+    "zestimateLowPercent": "5",
+    "brokerId": null,
+    "stateId": 9,
+    "url": "/homedetails/29971-Villa-Alturas-Dr-Temecula-CA-92592/18174069_zpid/",
+    "solarPotential": null,
+    "attributionInfo": {
+        "buyerAgentName": null,
+        "infoString3": "https://photos.zillowstatic.com/fp/cb8caaa629c0af2058e60add67b2f2ee-zillow_web_95_35.jpg",
+        "mlsName": "CRMLS",
+        "coAgentLicenseNumber": null,
+        "listingAgreement": null,
+        "listingOffices": [
+            {
+                "associatedOfficeType": "listOffice",
+                "officeName": "Davida Parker, Broker"
+            }
+        ],
+        "infoString10": "The multiple listing data appearing on this website, or contained in reports produced therefrom, is owned and copyrighted by California Regional Multiple Listing Service, Inc. (\"CRMLS\") and is protected by all applicable copyright laws. Information provided is for viewer's personal, non-commercial use and may not be used for any purpose other than to identify prospective properties the viewer may be interested in purchasing. All listing data, including but not limited to square footage and lot size is believed to be accurate, but the listing Agent, listing Broker and CRMLS and its affiliates do not warrant or guarantee such accuracy. The viewer should independently verify the listed data prior to making any decisions based on such information by personal inspection and/or contacting a real estate professional.\n\nBased on information from California Regional Multiple Listing Service, Inc. as of 2025-09-15 08:56:14 PDT and /or other sources. All data, including all measurements and calculations of area, is obtained from various sources and has not been, and will not be, verified by broker or MLS. All information should be independently reviewed and verified for accuracy. Properties may or may not be listed by the office/agent presenting the information",
+        "buyerAgentMemberStateLicense": null,
+        "brokerName": "Davida Parker, Broker",
+        "listingAttributionContact": "760-707-4607",
+        "lastUpdated": "2025-09-14 17:56:58",
+        "trueStatus": null,
+        "listingAgentAttributionContact": null,
+        "agentEmail": null,
+        "agentName": "Davida Parker",
+        "attributionTitle": "Listing Provided by:",
+        "mlsId": "SW25190592",
+        "coAgentName": null,
+        "coAgentNumber": null,
+        "infoString5": "760-707-4607",
+        "listingAgents": [
+            {
+                "memberStateLicense": "DRE #01951861",
+                "memberFullName": "Davida Parker",
+                "associatedAgentType": "listAgent"
+            }
+        ],
+        "agentPhoneNumber": "760-707-4607",
+        "agentLicenseNumber": "DRE #01951861",
+        "providerLogo": "https://photos.zillowstatic.com/fp/cb8caaa629c0af2058e60add67b2f2ee-zillow_web_95_35.jpg",
+        "infoString16": null,
+        "buyerBrokerageName": null,
+        "mlsDisclaimer": "The multiple listing data appearing on this website, or contained in reports produced therefrom, is owned and copyrighted by California Regional Multiple Listing Service, Inc. (\"CRMLS\") and is protected by all applicable copyright laws. Information provided is for viewer's personal, non-commercial use and may not be used for any purpose other than to identify prospective properties the viewer may be interested in purchasing. All listing data, including but not limited to square footage and lot size is believed to be accurate, but the listing Agent, listing Broker and CRMLS and its affiliates do not warrant or guarantee such accuracy. The viewer should independently verify the listed data prior to making any decisions based on such information by personal inspection and/or contacting a real estate professional.\n\nBased on information from California Regional Multiple Listing Service, Inc. as of 2025-09-15 08:56:14 PDT and /or other sources. All data, including all measurements and calculations of area, is obtained from various sources and has not been, and will not be, verified by broker or MLS. All information should be independently reviewed and verified for accuracy. Properties may or may not be listed by the office/agent presenting the information",
+        "brokerPhoneNumber": "760-707-4607",
+        "lastChecked": "2025-09-15 08:56:14"
+    },
+    "priceChangeDateString": null,
+    "photoCount": 28,
+    "homeStatus": "FOR_SALE",
+    "homeFacts": null,
+    "resoFacts": {
+        "hasAttachedProperty": false,
+        "frontageType": null,
+        "poolFeatures": [
+            "In Ground",
+            "Private",
+            "Association"
+        ],
+        "flooring": null,
+        "foundationDetails": {},
+        "accessibilityFeatures": null,
+        "hasGarage": true,
+        "hasPetsAllowed": null,
+        "bodyType": null,
+        "topography": null,
+        "landLeaseExpirationDate": null,
+        "hasAdditionalParcels": false,
+        "parkName": null,
+        "livingQuarters": {},
+        "taxAssessedValue": 225872,
+        "atAGlanceFacts": [
+            {
+                "factValue": "Single Family Residence",
+                "factLabel": "Type"
+            },
+            {
+                "factValue": "1975",
+                "factLabel": "Year Built"
+            },
+            {
+                "factValue": "Central",
+                "factLabel": "Heating"
+            },
+            {
+                "factValue": "Central Air",
+                "factLabel": "Cooling"
+            },
+            {
+                "factValue": "2 Attached Garage spaces",
+                "factLabel": "Parking"
+            },
+            {
+                "factValue": "$120 monthly",
+                "factLabel": "HOA"
+            },
+            {
+                "factValue": "8,276 sqft",
+                "factLabel": "Lot"
+            },
+            {
+                "factValue": "23 Days",
+                "factLabel": "Days on Zillow"
+            },
+            {
+                "factValue": "$498",
+                "factLabel": "Price/sqft"
+            },
+            {
+                "factValue": null,
+                "factLabel": "Offer Review Date"
+            }
+        ],
+        "offerReviewDate": null,
+        "horseYN": null,
+        "view": [
+            "Neighborhood"
+        ],
+        "rooms": [
+            {
+                "level": null,
+                "dimensions": null,
+                "features": null,
+                "roomAreaUnits": null,
+                "roomArea": null,
+                "roomAreaSource": null,
+                "roomType": "MasterBedroom",
+                "roomDescription": null,
+                "roomWidth": null,
+                "roomLevel": null,
+                "description": null,
+                "roomLengthWidthUnits": null,
+                "roomLength": null,
+                "roomFeatures": [
+                    "Main Level Primary"
+                ],
+                "roomDimensions": null,
+                "roomLengthWidthSource": null,
+                "area": null
+            },
+            {
+                "level": null,
+                "dimensions": null,
+                "features": null,
+                "roomAreaUnits": null,
+                "roomArea": null,
+                "roomAreaSource": null,
+                "roomType": "Bedroom",
+                "roomDescription": null,
+                "roomWidth": null,
+                "roomLevel": null,
+                "description": null,
+                "roomLengthWidthUnits": null,
+                "roomLength": null,
+                "roomFeatures": [
+                    "All Bedrooms Down"
+                ],
+                "roomDimensions": null,
+                "roomLengthWidthSource": null,
+                "area": null
+            },
+            {
+                "level": null,
+                "dimensions": null,
+                "features": null,
+                "roomAreaUnits": null,
+                "roomArea": null,
+                "roomAreaSource": null,
+                "roomType": "Bedroom",
+                "roomDescription": null,
+                "roomWidth": null,
+                "roomLevel": null,
+                "description": null,
+                "roomLengthWidthUnits": null,
+                "roomLength": null,
+                "roomFeatures": [
+                    "Bedroom on Main Level"
+                ],
+                "roomDimensions": null,
+                "roomLengthWidthSource": null,
+                "area": null
+            },
+            {
+                "level": null,
+                "dimensions": null,
+                "features": null,
+                "roomAreaUnits": null,
+                "roomArea": null,
+                "roomAreaSource": null,
+                "roomType": "Bathroom",
+                "roomDescription": null,
+                "roomWidth": null,
+                "roomLevel": null,
+                "description": null,
+                "roomLengthWidthUnits": null,
+                "roomLength": null,
+                "roomFeatures": [
+                    "Bathtub"
+                ],
+                "roomDimensions": null,
+                "roomLengthWidthSource": null,
+                "area": null
+            },
+            {
+                "level": null,
+                "dimensions": null,
+                "features": null,
+                "roomAreaUnits": null,
+                "roomArea": null,
+                "roomAreaSource": null,
+                "roomType": "Foyer",
+                "roomDescription": null,
+                "roomWidth": null,
+                "roomLevel": null,
+                "description": null,
+                "roomLengthWidthUnits": null,
+                "roomLength": null,
+                "roomFeatures": null,
+                "roomDimensions": null,
+                "roomLengthWidthSource": null,
+                "area": null
+            },
+            {
+                "level": null,
+                "dimensions": null,
+                "features": null,
+                "roomAreaUnits": null,
+                "roomArea": null,
+                "roomAreaSource": null,
+                "roomType": "Kitchen",
+                "roomDescription": null,
+                "roomWidth": null,
+                "roomLevel": null,
+                "description": null,
+                "roomLengthWidthUnits": null,
+                "roomLength": null,
+                "roomFeatures": null,
+                "roomDimensions": null,
+                "roomLengthWidthSource": null,
+                "area": null
+            }
+        ],
+        "belowGradeFinishedArea": null,
+        "feesAndDues": [
+            {
+                "phone": "949-833-2600",
+                "name": "Lake Village",
+                "fee": "$120 monthly",
+                "type": "HOA"
+            }
+        ],
+        "cityRegion": "Temecula",
+        "mainLevelBathrooms": 2,
+        "hasPrivatePool": true,
+        "landLeaseAmount": null,
+        "waterSource": [
+            "Public"
+        ],
+        "exteriorFeatures": {},
+        "inclusions": [
+            "Solar Lease",
+            "Spa"
+        ],
+        "hasFireplace": true,
+        "gas": null,
+        "propertyCondition": "Fixer",
+        "elevationUnits": "Feet",
+        "exclusions": [
+            "refrigerator",
+            "washer",
+            "dryer"
+        ],
+        "mainLevelBedrooms": 3,
+        "numberOfUnitsVacant": null,
+        "hasWaterfrontView": null,
+        "bathroomsOneQuarter": null,
+        "lotSize": "8,276 sqft",
+        "entryLevel": null,
+        "media": {},
+        "greenWaterConservation": null,
+        "stories": 1,
+        "livingArea": "1,275 sqft",
+        "commonWalls": "No Common Walls",
+        "listingTerms": "Submit",
+        "otherParking": null,
+        "associationFee": "$120 monthly",
+        "marketingType": null,
+        "greenIndoorAirQuality": null,
+        "greenSustainability": null,
+        "livingAreaRangeUnits": "Square Feet",
+        "associationPhone": "949-833-2600",
+        "greenBuildingVerificationType": null,
+        "hasAttachedGarage": true,
+        "bedrooms": 3,
+        "architecturalStyle": null,
+        "listingId": null,
+        "structureType": "House",
+        "interiorFeatures": [
+            "Eat-in Kitchen",
+            "All Bedrooms Down",
+            "Bedroom on Main Level",
+            "Entrance Foyer",
+            "Main Level Primary"
+        ],
+        "horseAmenities": null,
+        "garageParkingCapacity": 2,
+        "developmentStatus": null,
+        "lotFeatures": [
+            "0-1 Unit/Acre"
+        ],
+        "roofType": null,
+        "compensationBasedOn": null,
+        "greenEnergyGeneration": [
+            "Solar"
+        ],
+        "daysOnZillow": 23,
+        "listAOR": "California Regional MLS",
+        "buildingAreaSource": null,
+        "elementarySchool": null,
+        "zoningDescription": null,
+        "irrigationWaterRightsAcres": null,
+        "yearBuiltEffective": null,
+        "greenEnergyEfficient": null,
+        "constructionMaterials": {},
+        "fireplaceFeatures": [
+            "Living Room"
+        ],
+        "hoaFeeTotal": "$120 monthly",
+        "appliances": null,
+        "sewer": [
+            "Public Sewer"
+        ],
+        "bathroomsPartial": null,
+        "fencing": null,
+        "spaFeatures": [
+            "Above Ground"
+        ],
+        "waterViewYN": false,
+        "buildingName": null,
+        "attic": null,
+        "petsMaxWeight": null,
+        "cumulativeDaysOnMarket": "23 days",
+        "waterfrontFeatures": null,
+        "additionalParcelsDescription": null,
+        "canRaiseHorses": false,
+        "hasLandLease": false,
+        "communityFeatures": [
+            "Suburban"
+        ],
+        "waterBodyName": null,
+        "middleOrJuniorSchool": null,
+        "lotSizeDimensions": null,
+        "virtualTour": null,
+        "contingency": null,
+        "yearBuilt": 1975,
+        "utilities": null,
+        "totalActualRent": null,
+        "bathroomsFull": 2,
+        "parcelNumber": "944162001",
+        "incomeIncludes": null,
+        "highSchool": null,
+        "taxAnnualAmount": 7555,
+        "subdivisionName": null,
+        "storiesTotal": 1,
+        "storiesDecimal": 1,
+        "specialListingConditions": "Third Party Approval,Probate Listing",
+        "windowFeatures": null,
+        "ownership": null,
+        "woodedArea": null,
+        "middleOrJuniorSchoolDistrict": null,
+        "associationPhone2": null,
+        "onMarketDate": 1755820800000,
+        "roomTypes": [
+            "Bedroom",
+            "Foyer",
+            "Kitchen",
+            "Primary Bedroom"
+        ],
+        "frontageLength": null,
+        "roadSurfaceType": null,
+        "associationAmenities": [
+            "Sport Court",
+            "Playground",
+            "Pool",
+            "Tennis Court(s)",
+            "Trail(s)"
+        ],
+        "propertySubType": [
+            "Single Family Residence"
+        ],
+        "hasCooling": true,
+        "levels": "One",
+        "coveredParkingCapacity": 2,
+        "foundationArea": null,
+        "zoning": "R1",
+        "hoaFee": "$120 monthly",
+        "livingAreaRange": null,
+        "parkingFeatures": [
+            "Garage"
+        ],
+        "parkingCapacity": 4,
+        "cropsIncludedYN": null,
+        "tenantPays": null,
+        "builderModel": null,
+        "otherStructures": null,
+        "otherFacts": {},
+        "additionalFeeInfo": null,
+        "hasView": true,
+        "openParkingCapacity": 2,
+        "securityFeatures": null,
+        "numberOfUnitsInCommunity": null,
+        "hasHomeWarranty": false,
+        "basementYN": null,
+        "doorFeatures": null,
+        "ownershipType": null,
+        "aboveGradeFinishedArea": null,
+        "associations": [
+            {
+                "feeFrequency": "$120 monthly",
+                "name": "Lake Village",
+                "phone": "949-833-2600"
+            }
+        ],
+        "waterView": null,
+        "electric": null,
+        "buildingFeatures": null,
+        "hasOpenParking": null,
+        "hasCarport": null,
+        "bathroomsHalf": null,
+        "homeType": "SingleFamily",
+        "isSeniorCommunity": null,
+        "municipality": null,
+        "bathroomsThreeQuarter": null,
+        "hasSpa": true,
+        "basement": null,
+        "associationFee2": null,
+        "cooling": [
+            "Central Air"
+        ],
+        "hasHeating": true,
+        "associationName2": null,
+        "hasRentControl": null,
+        "elementarySchoolDistrict": null,
+        "otherEquipment": null,
+        "bathrooms": 2,
+        "buildingArea": null,
+        "furnished": false,
+        "vegetation": null,
+        "patioAndPorchFeatures": null,
+        "bathroomsFloat": 2,
+        "builderName": null,
+        "highSchoolDistrict": "Temecula Unified",
+        "hasElectricOnProperty": null,
+        "laundryFeatures": [
+            "Inside"
+        ],
+        "entryLocation": "1",
+        "fireplaces": null,
+        "heating": [
+            "Central"
+        ],
+        "availabilityDate": null,
+        "carportParkingCapacity": null,
+        "hasAssociation": true,
+        "irrigationWaterRightsYN": null,
+        "isNewConstruction": false,
+        "associationFeeIncludes": null,
+        "leaseTerm": null,
+        "pricePerSquareFoot": 498,
+        "associationName": "Lake Village",
+        "elevation": null
+    },
+    "datePosted": "2025-08-23",
+    "bedrooms": 3,
+    "propertyTypeDimension": "Single Family",
+    "mortgageZHLRates": {
+        "thirtyYearFixedBucket": {
+            "rate": 6.021,
+            "rateSource": "ZGMI",
+            "lastUpdated": 1757951401080
+        },
+        "fifteenYearFixedBucket": {
+            "rate": 5.34,
+            "rateSource": "ZGMI",
+            "lastUpdated": 1757951401080
+        },
+        "arm5Bucket": {
+            "rate": 6.365,
+            "rateSource": "ZGMI",
+            "lastUpdated": 1757951401080
+        }
+    },
+    "comingSoonOnMarketDate": null,
+    "favoriteCount": 356,
+    "livingArea": 1275,
+    "zestimateHighPercent": "5",
+    "mlsid": "SW25190592",
+    "isListedByOwner": null,
+    "listingSubType": {
+        "is_comingSoon": false,
+        "is_pending": false,
+        "is_forAuction": false,
+        "is_bankOwned": false,
+        "is_FSBA": true,
+        "is_FSBO": false,
+        "is_newHome": false,
+        "is_foreclosure": false
+    },
+    "buildingId": null,
+    "country": "USA",
+    "price": 634900,
+    "priceChangeDate": null,
+    "contingentListingType": null,
+    "images": [
+        "https://photos.zillowstatic.com/fp/b7ef5f8434ec50601b4c6689d8d2ac4d-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/d9f6ae0b6a71f7e39eb74e3c2532543b-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/0449f6407ae80ec2cf62794317a79fee-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/f68166334811ed1dfa0924b5ef150d9c-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/85531c343a2b88965eb24e0689d019dd-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/3eff847b2b48c431f18f24538cd78004-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/e3a55cd88357ec603c3f91389d24ea55-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/19e1bb8578bff24e35a47e64415aede4-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/fe62dded04fcb8cf6b8ebc5bbf4c603f-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/9909a91e0b105f12afb144f85867bfc1-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/a330ca00939a5b41ab2bad5f3e16aabf-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/280631fd613641ea1ccf15d83810fb3d-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/dc2758b2cfce89f7f53b44543a07405b-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/1a9da18e455c0b05e143d6c9dba581b9-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/0f1f3bf8d34022d5fa2d48eb96a50b84-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/bb9d1bb923561689d11291041a846cb8-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/f70b06ce6919b3694b4075595fb9806d-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/c3d85e67fc1923c689560c0036fb0d9a-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/0664ba585e8b363291562069fa9f08fc-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/387394a9b0f1d2782da3cf999e6b99a5-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/615576e4c3ea681cf7040a6240733d25-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/5db5950363f9bc3aaa540951a2b919e4-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/300f677b4865c045c36924f5e15ecfbe-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/d95cf97ca6de6d02a29d4c56dd16ed3f-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/4cd59f15af79768931f8895ff18bb613-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/55f5100cfe73491e86f953933ae50442-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/f85e97cdea5eb8462872622a9d9f4048-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/7cd08cd5c135edab9a42f7b4cd32f74c-cc_ft_1536.jpg"
+    ]
+}

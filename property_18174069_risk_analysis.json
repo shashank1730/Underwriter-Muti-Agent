@@ -1,0 +1,20 @@
+{
+    "Risk Score": 4.9,
+    "Risk Factors": [
+        "Pool: Yes",
+        "Solar Panels / External Installations: Yes",
+        "Lot Size / Backyard Area: Medium to large corner lot with a fully hardscaped backyard featuring a pool, patio, and outdoor kitchen.",
+        "General Condition / Renovation Indicators: Partially Renovated",
+        "Exterior Material: Stucco",
+        "Roof Type: Asphalt Shingle"
+    ],
+    "Risk Reasoning": {
+        "Pool: Yes": "A pool significantly increases liability risk due to potential for drowning or injuries, and adds to property maintenance and potential damage claims.",
+        "Solar Panels / External Installations: Yes": "Solar panels add complexity to the roof structure, increasing the risk of leaks if not properly installed or maintained, and are susceptible to damage from severe weather events.",
+        "Lot Size / Backyard Area: Medium to large corner lot with a fully hardscaped backyard featuring a pool, patio, and outdoor kitchen.": "A corner lot increases exposure to traffic and potential for vandalism or accidents. The outdoor kitchen adds complex utilities (gas, water, electrical) and appliances, increasing fire risk and potential for property damage or liability claims.",
+        "General Condition / Renovation Indicators: Partially Renovated": "This indicates that some parts of the property may still be older or that renovations are incomplete, leading to potential for hidden defects or future maintenance needs.",
+        "Exterior Material: Stucco": "While durable, stucco can be prone to cracking and moisture intrusion if not properly installed or maintained, potentially leading to water damage.",
+        "Roof Type: Asphalt Shingle": "Asphalt shingles generally have a shorter lifespan compared to other roofing materials like tile or metal, potentially leading to more frequent replacement or repair needs."
+    },
+    "Overall Risk Assessment": "This property presents a high-risk profile due to the presence of a pool, solar panels, and an outdoor kitchen, all of which significantly increase liability and property damage potential. The 'Partially Renovated' condition and stucco exterior add further uncertainty and maintenance considerations, while the corner lot increases exposure."
+}

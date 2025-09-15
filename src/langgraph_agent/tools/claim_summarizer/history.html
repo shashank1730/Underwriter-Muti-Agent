@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insurance Claim Notes & History</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+
+      .container {
+        display: flex;
+        gap: 20px;
+      }
+
+      .sidebar {
+        width: 300px;
+        background: white;
+        padding: 20px;
+        border: 1px solid #ddd;
+        height: fit-content;
+      }
+
+      .main-content {
+        flex: 1;
+        background: white;
+        padding: 20px;
+        border: 1px solid #ddd;
+      }
+
+      .claim-item {
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #eee;
+        cursor: pointer;
+        background: #f8f9fa;
+      }
+
+      .claim-item:hover {
+        background: #e9ecef;
+      }
+
+      .claim-item.active {
+        background: #007bff;
+        color: white;
+      }
+
+      .search-box {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: #333;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 10px;
+      }
+
+      h2 {
+        color: #007bff;
+      }
+
+      h3 {
+        color: #666;
+      }
+
+      .note-section {
+        margin: 20px 0;
+        padding: 15px;
+        border-left: 4px solid #007bff;
+        background: #f8f9fa;
+      }
+
+      .note-date {
+        font-weight: bold;
+        color: #666;
+        margin-bottom: 5px;
+      }
+
+      .note-author {
+        color: #007bff;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .note-content {
+        margin-bottom: 10px;
+        text-align: justify;
+      }
+
+      .note-tags {
+        font-style: italic;
+        color: #666;
+      }
+
+      .claim-meta {
+        background: #f8f9fa;
+        padding: 15px;
+        margin: 15px 0;
+        border: 1px solid #ddd;
+      }
+
+      .meta-item {
+        margin: 5px 0;
+      }
+
+      .meta-label {
+        font-weight: bold;
+        display: inline-block;
+        width: 120px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <h2>Claim List</h2>
+        <input
+          type="text"
+          class="search-box"
+          placeholder="Search claims..."
+          id="claimSearch"
+        />
+        <div id="claimList">
+          <!-- Claims will be populated by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <h1 id="claimTitle">Select a Claim</h1>
+        <div class="claim-meta" id="claimMeta" style="display: none">
+          <!-- Meta information will be populated by JavaScript -->
+        </div>
+        <div id="notesContent">
+          <!-- Notes will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Sample claim data with detailed, lengthy notes
+      const claimsData = {
+        "CLM-2024-001": {
+          title: "Water Damage - Kitchen Fire",
+          status: "investigation",
+          statusText: "Under Investigation",
+          date: "2024-01-15",
+          policyNumber: "POL-2024-789456",
+          insured: "John Smith",
+          adjuster: "Sarah Johnson",
+          estimatedAmount: "$15,000",
+          notes: [
+            {
+              date: "2024-01-15",
+              author: "Sarah Johnson",
+              content:
+                "Initial claim received at 2:30 PM today. Customer John Smith called our emergency hotline reporting a kitchen fire that occurred at approximately 1:45 PM. The fire started from an electrical outlet behind the refrigerator in the kitchen area. Customer reported hearing a loud pop sound followed by visible flames and smoke. He immediately called 911 and used a fire extinguisher to contain the flames before the fire department arrived. The fire department responded within 8 minutes and confirmed the fire was extinguished. No injuries were reported, but the customer and his family were evacuated from the premises as a precautionary measure. The fire department has declared the property safe to enter but recommended an electrical inspection before power is restored to the affected areas. Customer is currently staying at a local hotel with his family. Immediate response required due to safety concerns and the extent of potential damage. I have scheduled an on-site inspection for tomorrow morning at 9:00 AM to assess the full extent of the damage and begin the claims process.",
+              tags: "urgent, initial, emergency, electrical, safety",
+            },
+            {
+              date: "2024-01-16",
+              author: "Sarah Johnson",
+              content:
+                "On-site inspection completed at 9:15 AM. Upon arrival, I conducted a thorough walkthrough of the affected areas. The fire damage is primarily concentrated in the kitchen area, specifically around the electrical outlet where the fire originated. The outlet and surrounding wall area show significant charring and heat damage. The refrigerator, which was plugged into the affected outlet, sustained substantial damage to its rear panel and internal components. The kitchen cabinets above and below the outlet area show moderate to severe heat damage, with the wood charred and warped. The countertop surface directly above the outlet has visible burn marks and heat damage. The smoke damage extends throughout the entire first floor of the home, with visible soot deposits on walls, ceilings, and furniture. The HVAC system appears to have circulated smoke throughout the house, causing secondary damage to upholstered furniture, curtains, and other fabric items. I took comprehensive photographs of all damaged areas and documented the extent of the damage. The electrical panel shows signs of stress from the electrical surge that caused the fire. I have recommended that the customer contact a licensed electrician to inspect the entire electrical system before power is restored. The estimated repair costs are significant, including structural repairs to the wall and electrical system, replacement of damaged appliances and cabinets, and professional cleaning of smoke-damaged items throughout the home.",
+              tags: "inspection, documentation, damage assessment, electrical, smoke damage",
+            },
+            {
+              date: "2024-01-17",
+              author: "Mike Chen",
+              content:
+                "Electrical system assessment and safety evaluation completed. I contacted the customer's preferred electrician, ABC Electrical Services, and arranged for an emergency safety inspection. The electrician arrived at 2:00 PM and conducted a comprehensive evaluation of the entire electrical system. The inspection revealed that the fire was caused by a faulty electrical outlet that had loose connections, causing arcing and overheating. The electrician identified several other potential safety hazards in the electrical system, including outdated wiring in some areas and overloaded circuits. The main electrical panel sustained some damage from the electrical surge and may need replacement or significant repairs. The electrician has recommended that the customer and family remain elsewhere until the electrical system is completely repaired and certified as safe. This includes replacing the damaged outlet, repairing the affected wiring, and potentially upgrading the electrical panel. The electrician provided a detailed report of all findings and estimated repair costs. I have forwarded this report to our engineering department for review and approval. The customer has been advised to stay at the hotel for at least another week while electrical repairs are completed. I have also arranged for a temporary power shutoff to prevent any further electrical issues while repairs are being planned and executed.",
+              tags: "safety, electrical, inspection, engineering, temporary housing",
+            },
+            {
+              date: "2024-01-18",
+              author: "Sarah Johnson",
+              content:
+                "Comprehensive damage documentation and cost estimation completed. I spent the entire day conducting a detailed inventory of all damaged items and structures. The damage assessment includes both structural damage and personal property damage. Structural damage includes the kitchen wall where the fire originated, requiring complete drywall replacement, electrical outlet replacement, and potential stud replacement if heat damage is extensive. The kitchen cabinets above and below the outlet area need complete replacement due to heat damage and warping. The countertop surface requires replacement as the heat damage has compromised its structural integrity. The refrigerator, which was the primary appliance affected, is a total loss and needs replacement. The smoke damage throughout the first floor requires professional cleaning services for all surfaces, including walls, ceilings, furniture, and personal belongings. The HVAC system needs professional cleaning to remove smoke particles from ducts and components. Personal property damage includes upholstered furniture that has absorbed smoke odors, curtains and window treatments, clothing in nearby closets, and various household items that were exposed to smoke. I have obtained estimates from three different contractors for structural repairs, which range from $10,000 to $12,000. The contents cleaning and replacement costs are estimated at $3,000 to $4,000. I am waiting for the electrical inspection report to determine the exact scope and cost of electrical repairs, which could add another $2,000 to $5,000 to the total claim amount. The customer has been very cooperative throughout the process and has provided all requested documentation.",
+              tags: "documentation, cost estimation, structural damage, contents, contractors",
+            },
+            {
+              date: "2024-01-20",
+              author: "Sarah Johnson",
+              content:
+                "Electrical engineer inspection scheduled and customer communication update. I have scheduled a licensed electrical engineer to conduct a comprehensive inspection of the electrical system tomorrow at 10:00 AM. This inspection is required to determine the full scope of electrical repairs needed and to ensure the safety of the electrical system before power can be restored. The engineer will evaluate the main electrical panel, all wiring in the affected areas, and the overall electrical system capacity. This inspection is critical as it will determine whether we need to replace the entire electrical panel or just repair the affected circuits. The customer has been calling daily for updates on the timeline and is becoming increasingly anxious about the length of time required for repairs. I have explained the process and the importance of thorough inspections to ensure safety, but the customer is concerned about the financial impact of extended hotel stays and the disruption to his family's routine. I have reassured him that we are working as quickly as possible while maintaining safety standards. The customer has also expressed concern about the potential for mold growth due to the water used by the fire department, so I have arranged for a mold inspection as well. The hotel costs are being covered under the additional living expenses portion of the policy, but the customer is worried about reaching policy limits if the repairs take longer than expected.",
+              tags: "follow-up, electrical, customer communication, timeline, mold inspection",
+            },
+            {
+              date: "2024-01-22",
+              author: "Lisa Wang",
+              content:
+                "Policy review and coverage verification in progress. I have been conducting a thorough review of the customer's policy to ensure all damages are covered under the current policy terms. The policy includes coverage for fire damage, smoke damage, and additional living expenses. The electrical damage should be covered as it was a direct result of the fire. However, I need to verify if there are any exclusions or limitations that might affect coverage. The policy has a dwelling coverage limit of $300,000 and personal property coverage of $150,000, which should be sufficient for the estimated damages. The additional living expenses coverage has a limit of $30,000 and covers hotel costs, meals, and other necessary expenses while the home is being repaired. I have also verified that the customer has been paying premiums on time and that the policy was active at the time of the loss. The customer has comprehensive coverage with no significant exclusions that would affect this claim. I am also checking if there are any endorsements or riders that might provide additional coverage. The customer has been very helpful in providing all necessary documentation and has been cooperative throughout the claims process. I expect to complete the policy review within the next day or two and will then be able to provide a more definitive timeline for settlement.",
+              tags: "policy review, coverage verification, dwelling coverage, personal property, additional living expenses",
+            },
+            {
+              date: "2024-01-23",
+              author: "Sarah Johnson",
+              content:
+                "Electrical inspection completed with positive results. The electrical engineer completed the inspection today and provided excellent news. The electrical system damage is not as extensive as initially feared. The fire was contained to the single outlet and its immediate wiring, and the main electrical panel sustained only minor damage that can be repaired rather than replaced. The engineer confirmed that the electrical system can be safely restored with targeted repairs rather than a complete overhaul. This will significantly reduce the repair costs and timeline. The required repairs include replacing the damaged outlet and its wiring, repairing the affected circuit breaker, and cleaning the electrical panel. The engineer estimated the electrical repairs at approximately $2,500, which is much lower than the initial estimate of $5,000. The customer was relieved to hear this news and expressed gratitude for the thorough investigation. The engineer has provided a detailed repair plan and timeline, estimating that electrical repairs can be completed within 3-4 days. This means the customer and his family can potentially return home much sooner than originally anticipated. I have arranged for the electrical contractor to begin repairs immediately and have coordinated with the general contractor to ensure the electrical work is completed before other repairs begin. The customer is very pleased with the progress and the communication throughout the process.",
+              tags: "completed, good news, electrical repairs, cost reduction, timeline improvement",
+            },
+            {
+              date: "2024-01-25",
+              author: "Sarah Johnson",
+              content:
+                "Settlement preparation and final documentation in progress. I am now preparing the final settlement package based on all the inspections and estimates received. The total claim amount is estimated at $14,500, which includes $8,000 for structural repairs (kitchen wall, cabinets, countertop), $2,500 for electrical repairs, $3,000 for contents cleaning and replacement, and $1,000 for additional living expenses to date. This amount is well within the policy limits and should be approved without issues. I have compiled all the necessary documentation including the fire department report, electrical inspection reports, contractor estimates, and photographs. The customer has been extremely cooperative throughout the entire process and has provided all requested information promptly. He has expressed satisfaction with the claims handling process and the communication he has received. The electrical repairs are scheduled to begin tomorrow, and the general contractor is ready to start structural repairs as soon as the electrical work is completed. I expect to have the settlement check processed within 3-5 business days once all final documentation is submitted. The customer has been informed of the timeline and is pleased with the progress. I will continue to monitor the repair process and provide updates as needed. The customer has also expressed interest in upgrading his electrical system to prevent similar incidents in the future, and I have provided information about available discounts for safety improvements.",
+              tags: "settlement, documentation, final preparation, customer satisfaction, repair coordination",
+            },
+          ],
+        },
+        "CLM-2024-002": {
+          title: "Auto Accident - Vehicle Damage",
+          status: "processing",
+          statusText: "Processing Payment",
+          date: "2024-01-20",
+          policyNumber: "POL-2024-123789",
+          insured: "Maria Garcia",
+          adjuster: "David Brown",
+          estimatedAmount: "$8,500",
+          notes: [
+            {
+              date: "2024-01-20",
+              author: "David Brown",
+              content:
+                "Auto accident claim filed at 4:15 PM. Customer Maria Garcia called to report a rear-end collision that occurred at 3:45 PM on Highway 101 near the downtown exit. The accident involved her 2019 Honda Accord and a 2020 Ford F-150 pickup truck. According to the customer, she was stopped at a red light when the Ford F-150 failed to stop and collided with the rear of her vehicle. The impact was significant, causing substantial damage to the rear of her Honda. The other driver, identified as John Smith, admitted fault at the scene and was cited by the responding police officer for following too closely. The police report number is 2024-001234 and the investigating officer was Officer Martinez. No injuries were reported by either party, and both vehicles were able to be driven from the scene. The customer's vehicle sustained damage to the rear bumper, trunk lid, rear quarter panels, and rear lights. The customer was visibly shaken but otherwise unharmed. She was able to drive her vehicle to a nearby parking lot where she called our claims department. I have initiated the claims process and scheduled a vehicle inspection for tomorrow morning. The customer has comprehensive coverage with collision and rental car coverage, so she should be covered for repairs and temporary transportation.",
+              tags: "accident, rear-end collision, no injury, police report, comprehensive coverage",
+            },
+            {
+              date: "2024-01-21",
+              author: "David Brown",
+              content:
+                "Vehicle inspection completed at 9:30 AM at ABC Auto Body Shop. I conducted a thorough inspection of the damaged vehicle and documented all visible damage. The rear-end collision caused significant damage to the rear of the vehicle. The rear bumper is completely destroyed and needs replacement. The trunk lid is severely dented and may need replacement depending on the extent of internal damage. The rear quarter panels on both sides show substantial damage with deep dents and scratches. The rear taillights are broken and need replacement. The rear window appears to be intact but may have stress cracks that are not immediately visible. The rear suspension may have been affected by the impact, and this will need to be checked during the repair process. The vehicle's frame appears to be intact, which is good news as frame damage would significantly increase repair costs. I obtained estimates from three different body shops, and the repair costs range from $7,500 to $8,200. The repair time is estimated at 5-7 business days depending on parts availability. The customer has rental car coverage, so I have arranged for a rental vehicle to be provided while her car is being repaired. The customer was present during the inspection and was very cooperative. She expressed concern about the repair quality and timeline, and I assured her that we work with certified repair shops that guarantee their work.",
+              tags: "inspection, damage assessment, repair estimates, rental car, frame damage",
+            },
+            {
+              date: "2024-01-22",
+              author: "Jennifer Lee",
+              content:
+                "Rental car arrangement and customer service coordination completed. I contacted our preferred rental car partner, Enterprise Rent-A-Car, and arranged for a mid-size sedan to be provided to the customer. The rental car was delivered to the customer's home at 2:00 PM today. The customer was very pleased with the service and the quality of the rental vehicle. I explained the rental car coverage details, including the daily limit and any restrictions. The customer is covered for up to $50 per day for rental car expenses, and the rental is covered for the duration of the repair process. I also provided the customer with a direct contact number for any issues with the rental vehicle. The customer expressed appreciation for the prompt service and the quality of communication she has received throughout the claims process. I have also coordinated with the repair shop to ensure they have all necessary information and authorization to begin repairs. The repair shop has confirmed that all necessary parts are available and they can begin work immediately. The customer has been informed of the repair timeline and will receive regular updates on the progress. I have also arranged for the customer to receive photos of the repair progress if she requests them.",
+              tags: "rental car, customer service, coordination, repair authorization, communication",
+            },
+            {
+              date: "2024-01-23",
+              author: "David Brown",
+              content:
+                "Repair authorization approved and work commenced. I have reviewed all the estimates and approved the repair work with ABC Auto Body Shop, which provided the most competitive estimate at $7,800. The repair shop has confirmed that all necessary parts have been ordered and are expected to arrive within 2-3 business days. The repair work began today and is expected to be completed within 5-7 business days. The repair process includes removing the damaged rear bumper, trunk lid, and quarter panels, replacing them with new parts, and repainting the affected areas to match the original color. The repair shop will also inspect the rear suspension and frame to ensure there is no hidden damage. The customer has been updated on the progress and is satisfied with the timeline. I have also arranged for the customer to visit the repair shop to see the progress if she wishes. The repair shop has a good reputation and provides a lifetime warranty on their work. The customer has been informed that she will receive a detailed repair report upon completion. I will continue to monitor the repair progress and provide updates as needed. The customer has expressed satisfaction with the claims handling process and the communication she has received.",
+              tags: "repair authorization, work commenced, parts ordering, timeline, customer satisfaction",
+            },
+            {
+              date: "2024-01-25",
+              author: "David Brown",
+              content:
+                "Repair progress update and customer communication. I contacted the repair shop today to check on the progress of the repairs. The repair work is proceeding well and is on schedule. The damaged parts have been removed and the new parts have arrived. The body work is approximately 60% complete, with the new bumper and trunk lid installed. The quarter panels are being prepared for installation. The painting process is scheduled to begin tomorrow and should be completed within 2 days. The repair shop has confirmed that there is no hidden damage to the frame or suspension, which is good news. The customer called today to check on the status and was very pleased with the progress update. She expressed appreciation for the regular communication and the quality of service she has received. The repair shop has also provided photos of the progress, which I have shared with the customer. The customer is very satisfied with the repair quality and the timeline. She has also mentioned that the rental car has been working well and she has had no issues with it. The repair is expected to be completed by the end of the week, and the customer will be able to pick up her vehicle. I have arranged for a final inspection to ensure the repair quality meets our standards before the customer takes possession of the vehicle.",
+              tags: "progress update, customer communication, repair quality, timeline, final inspection",
+            },
+            {
+              date: "2024-01-28",
+              author: "David Brown",
+              content:
+                "Repair completed successfully and settlement processed. The repair work has been completed successfully and the vehicle has passed the final inspection. The repair shop has provided a detailed report of all work performed, including before and after photos. The vehicle has been restored to its pre-accident condition, and all work is covered by the repair shop's lifetime warranty. The final repair cost was $7,800, which was within the estimated range. The settlement payment has been processed and will be sent to the repair shop within 2-3 business days. The customer has been informed that her vehicle is ready for pickup and she can return the rental car. The customer was very pleased with the repair quality and the overall claims handling process. She expressed gratitude for the excellent service and communication throughout the process. The customer has also mentioned that she would recommend our company to others based on her experience. The rental car has been returned without any issues, and all rental expenses have been covered under the policy. The claim has been closed successfully, and the customer is satisfied with the outcome. I have also provided the customer with information about our accident forgiveness program and other available discounts.",
+              tags: "completed, settlement processed, repair quality, customer satisfaction, claim closed",
+            },
+          ],
+        },
+        "CLM-2024-003": {
+          title: "Property Theft - Home Burglary",
+          status: "open",
+          statusText: "New Claim",
+          date: "2024-01-25",
+          policyNumber: "POL-2024-456123",
+          insured: "Robert Wilson",
+          adjuster: "Amy Davis",
+          estimatedAmount: "$5,200",
+          notes: [
+            {
+              date: "2024-01-25",
+              author: "Amy Davis",
+              content:
+                "Theft claim filed at 6:30 PM. Customer Robert Wilson called to report a home burglary that occurred while he was at work. The customer arrived home at 5:45 PM to discover that his home had been broken into. The burglary occurred between 8:00 AM and 5:30 PM while the customer was at work. The customer noticed that the back door was ajar and the door frame was damaged, indicating forced entry. Upon entering the home, he discovered that several rooms had been ransacked and valuable items were missing. The customer immediately called the police and then contacted our claims department. The customer was very upset and concerned about the security of his home. He reported that the burglars had taken electronics, jewelry, and cash. The customer has provided a preliminary list of stolen items, but he is still conducting a thorough inventory of his home to determine the full extent of the theft. The police have been notified and are investigating the incident. The customer has been advised to secure his home and change the locks as a precautionary measure. I have initiated the claims process and scheduled an on-site inspection for tomorrow morning. The customer has comprehensive coverage that includes theft protection, so he should be covered for the stolen items up to the policy limits.",
+              tags: "theft, burglary, forced entry, electronics, jewelry, police investigation",
+            },
+            {
+              date: "2024-01-26",
+              author: "Amy Davis",
+              content:
+                "Police report obtained and detailed inventory completed. I obtained the official police report today, which confirms the burglary and provides important details about the incident. The police report number is 2024-001234, and the investigating officer is Detective Johnson. The report confirms that the burglars gained entry through the back door by forcing it open, causing damage to the door frame and lock mechanism. The police found evidence of forced entry and confirmed that the burglary occurred during daylight hours. The customer has completed a detailed inventory of stolen items, which includes a 65-inch Samsung Smart TV valued at $1,200, a MacBook Pro laptop valued at $2,500, an iPad Pro valued at $800, a Rolex watch valued at $3,000, a gold necklace valued at $500, and $200 in cash. The total value of stolen items is approximately $8,200. The customer has provided receipts for most of the items, which will help with the claims process. The police have collected evidence from the scene and are continuing their investigation. The customer has been advised to install a security system and improve the security of his home. I have also recommended that he consider installing security cameras and motion-activated lights to deter future burglaries.",
+              tags: "police report, inventory, receipts, evidence, security recommendations",
+            },
+            {
+              date: "2024-01-27",
+              author: "Amy Davis",
+              content:
+                "Inventory assessment and coverage verification in progress. I am conducting a thorough review of the stolen items and verifying their values against the customer's policy coverage. The customer has provided receipts for most of the items, which helps establish their value. However, some items, particularly the jewelry, may require professional appraisals to determine their current market value. The customer's policy includes coverage for personal property up to $50,000, which should be sufficient for the stolen items. However, there are specific limits for certain categories of items, such as jewelry, which may be limited to $2,500 per item or $5,000 total. I need to verify the exact coverage limits and any applicable deductibles. The customer has also mentioned that he may have additional items that were stolen that he hasn't yet discovered. I have advised him to continue checking his home and to report any additional items as soon as possible. The customer has been very cooperative and has provided all requested documentation. I am also checking if there are any endorsements or riders that might provide additional coverage for high-value items. The customer has expressed concern about the timeline for settlement and has asked about the process for replacing the stolen items.",
+              tags: "inventory assessment, coverage verification, policy limits, deductibles, high-value items",
+            },
+            {
+              date: "2024-01-28",
+              author: "Tom Rodriguez",
+              content:
+                "Security assessment and recommendations provided. I conducted a comprehensive security assessment of the customer's home today to identify vulnerabilities and provide recommendations for improving security. The assessment revealed several areas where security could be improved. The back door, which was the point of entry, had a basic lock that was easily defeated. I recommend installing a deadbolt lock and reinforcing the door frame. The windows throughout the home lack security measures such as window locks or security bars. I recommend installing window locks and considering security film on ground-level windows. The home lacks a security system, which is a significant vulnerability. I recommend installing a monitored security system with door and window sensors, motion detectors, and security cameras. The exterior lighting is inadequate, providing cover for potential burglars. I recommend installing motion-activated lights around the perimeter of the home. The customer has expressed interest in implementing these security measures and has asked about potential discounts on his insurance premium for security improvements. I have provided him with information about available discounts and have arranged for a security system installer to provide a quote. The customer is very motivated to improve his home security and prevent future burglaries.",
+              tags: "security assessment, recommendations, deadbolt locks, security system, lighting, discounts",
+            },
+            {
+              date: "2024-01-29",
+              author: "Amy Davis",
+              content:
+                "Customer communication and timeline update. The customer called today to check on the status of his claim and to ask about the timeline for settlement. I explained the claims process and the steps that need to be completed before settlement can be processed. The customer has been very patient and understanding throughout the process, but he is eager to replace his stolen items and improve his home security. I have reassured him that we are working diligently on his case and that we will process the settlement as quickly as possible. The customer has also mentioned that he has discovered a few additional items that were stolen, including a pair of gold earrings valued at $300 and a small amount of cash. I have added these items to the claim and updated the total value accordingly. The customer has been very cooperative and has provided all requested documentation promptly. He has also expressed appreciation for the communication and service he has received. I have explained that the settlement process typically takes 5-10 business days once all documentation is complete, and I expect to have his claim ready for settlement within the next few days. The customer has also asked about the process for purchasing replacement items and whether he needs to wait for settlement before making purchases.",
+              tags: "customer communication, timeline, additional items, settlement process, replacement items",
+            },
+          ],
+        },
+      };
+
+      let currentClaimId = null;
+
+      // Initialize the application
+      function init() {
+        populateClaimList();
+        // Select first claim by default
+        selectClaim("CLM-2024-001");
+      }
+
+      // Populate the claim list in sidebar
+      function populateClaimList() {
+        const claimList = document.getElementById("claimList");
+        claimList.innerHTML = "";
+
+        Object.keys(claimsData).forEach((claimId) => {
+          const claim = claimsData[claimId];
+          const claimItem = document.createElement("div");
+          claimItem.className = "claim-item";
+          claimItem.onclick = () => selectClaim(claimId);
+
+          claimItem.innerHTML = `
+                    <strong>${claimId}</strong><br>
+                    ${claim.title}<br>
+                    <small>${claim.date} - ${claim.statusText}</small>
+                `;
+
+          claimList.appendChild(claimItem);
+        });
+      }
+
+      // Select a claim and display its details
+      function selectClaim(claimId) {
+        const claim = claimsData[claimId];
+        if (!claim) return;
+
+        currentClaimId = claimId;
+
+        // Update active claim in sidebar
+        document.querySelectorAll(".claim-item").forEach((item) => {
+          item.classList.remove("active");
+        });
+        event.target.closest(".claim-item").classList.add("active");
+
+        // Update claim header
+        document.getElementById(
+          "claimTitle"
+        ).textContent = `${claimId} - ${claim.title}`;
+
+        document.getElementById("claimMeta").innerHTML = `
+                <h2>Claim Information</h2>
+                <div class="meta-item"><span class="meta-label">Status:</span> ${claim.statusText}</div>
+                <div class="meta-item"><span class="meta-label">Policy Number:</span> ${claim.policyNumber}</div>
+                <div class="meta-item"><span class="meta-label">Insured:</span> ${claim.insured}</div>
+                <div class="meta-item"><span class="meta-label">Adjuster:</span> ${claim.adjuster}</div>
+                <div class="meta-item"><span class="meta-label">Estimated Amount:</span> ${claim.estimatedAmount}</div>
+                <div class="meta-item"><span class="meta-label">Date:</span> ${claim.date}</div>
+            `;
+        document.getElementById("claimMeta").style.display = "block";
+
+        // Update notes
+        populateNotes(claim.notes);
+      }
+
+      // Populate the notes
+      function populateNotes(notes) {
+        const notesContent = document.getElementById("notesContent");
+        notesContent.innerHTML = "";
+
+        // Sort notes by date (newest first)
+        const sortedNotes = notes.sort(
+          (a, b) => new Date(b.date) - new Date(a.date)
+        );
+
+        sortedNotes.forEach((note, index) => {
+          const noteSection = document.createElement("div");
+          noteSection.className = "note-section";
+
+          noteSection.innerHTML = `
+                    <h3>Note ${index + 1} - ${note.date}</h3>
+                    <div class="note-date">Date: ${note.date}</div>
+                    <div class="note-author">Author: ${note.author}</div>
+                    <div class="note-content">${note.content}</div>
+                    <div class="note-tags">Tags: ${note.tags}</div>
+                `;
+
+          notesContent.appendChild(noteSection);
+        });
+      }
+
+      // Search functionality
+      document
+        .getElementById("claimSearch")
+        .addEventListener("input", function (e) {
+          const searchTerm = e.target.value.toLowerCase();
+          const claimItems = document.querySelectorAll(".claim-item");
+
+          claimItems.forEach((item) => {
+            const claimText = item.textContent.toLowerCase();
+            if (claimText.includes(searchTerm)) {
+              item.style.display = "block";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
+
+      // Initialize when page loads
+      document.addEventListener("DOMContentLoaded", init);
+    </script>
+  </body>
+</html>

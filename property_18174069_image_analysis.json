@@ -1,0 +1,86 @@
+{
+    "Roof Type": {
+        "value": "Asphalt Shingle",
+        "source_image": "https://i.ibb.co/3kM2WqK/9.png",
+        "image_index": 9,
+        "confidence": "high"
+    },
+    "Exterior Material": {
+        "value": "Stucco",
+        "source_image": "https://i.ibb.co/hZ23KxY/4.jpg",
+        "image_index": 4,
+        "confidence": "high"
+    },
+    "Pool": {
+        "value": "Yes",
+        "source_image": "https://o. \u099b\u09ac\u09bf\u09a4\u09c7.com/main/o/ai/2024/05/17/10/a8a1ab96-a887-4148-9c59-ac2812676fa4.jpeg",
+        "image_index": 1,
+        "confidence": "high"
+    },
+    "Garage": {
+        "value": "2 Car Attached",
+        "source_image": "https://i.ibb.co/312D4C6/4.jpg",
+        "image_index": 4,
+        "confidence": "high"
+    },
+    "Number of Stories": {
+        "value": "1",
+        "source_image": "https://i.imgur.com/8Q5Ff6S.jpg",
+        "image_index": 4,
+        "confidence": "high"
+    },
+    "General Condition / Renovation Indicators": {
+        "value": "Partially Renovated",
+        "source_image": "https://pi.movoto.com/p/102/40003770_0_2R2a1d_p.jpeg",
+        "image_index": 10,
+        "confidence": "high"
+    },
+    "Lot Size / Backyard Area": {
+        "value": "Medium to large corner lot with a fully hardscaped backyard featuring a pool, patio, and outdoor kitchen.",
+        "source_image": "https://i.imgur.com/G5qWdM6.jpeg",
+        "image_index": 9,
+        "confidence": "high"
+    },
+    "Driveway Type / Paved Area": {
+        "value": "Concrete",
+        "source_image": "https://i.ibb.co/bJCqK8d/04.jpg",
+        "image_index": 4,
+        "confidence": "high"
+    },
+    "Solar Panels / External Installations": {
+        "value": "Yes",
+        "source_image": "https://i.ibb.co/L5gqX1M/28.jpg",
+        "image_index": 28,
+        "confidence": "high"
+    },
+    "relevant_images": [
+        "https://photos.zillowstatic.com/fp/b7ef5f8434ec50601b4c6689d8d2ac4d-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/d9f6ae0b6a71f7e39eb74e3c2532543b-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/0449f6407ae80ec2cf62794317a79fee-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/f68166334811ed1dfa0924b5ef150d9c-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/85531c343a2b88965eb24e0689d019dd-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/3eff847b2b48c431f18f24538cd78004-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/e3a55cd88357ec603c3f91389d24ea55-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/19e1bb8578bff24e35a47e64415aede4-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/fe62dded04fcb8cf6b8ebc5bbf4c603f-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/9909a91e0b105f12afb144f85867bfc1-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/a330ca00939a5b41ab2bad5f3e16aabf-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/280631fd613641ea1ccf15d83810fb3d-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/dc2758b2cfce89f7f53b44543a07405b-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/1a9da18e455c0b05e143d6c9dba581b9-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/0f1f3bf8d34022d5fa2d48eb96a50b84-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/bb9d1bb923561689d11291041a846cb8-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/f70b06ce6919b3694b4075595fb9806d-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/c3d85e67fc1923c689560c0036fb0d9a-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/0664ba585e8b363291562069fa9f08fc-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/387394a9b0f1d2782da3cf999e6b99a5-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/615576e4c3ea681cf7040a6240733d25-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/5db5950363f9bc3aaa540951a2b919e4-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/300f677b4865c045c36924f5e15ecfbe-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/d95cf97ca6de6d02a29d4c56dd16ed3f-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/4cd59f15af79768931f8895ff18bb613-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/55f5100cfe73491e86f953933ae50442-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/f85e97cdea5eb8462872622a9d9f4048-cc_ft_1536.jpg",
+        "https://photos.zillowstatic.com/fp/7cd08cd5c135edab9a42f7b4cd32f74c-cc_ft_1536.jpg"
+    ]
+}
